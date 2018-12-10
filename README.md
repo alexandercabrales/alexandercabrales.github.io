@@ -1,6 +1,6 @@
 # alexandercabrales.github.io
 
-Hi, how are you? My name is Alexander Cabrales. I'm 26, learning about computer software, programming, networking, hardware, and internet systems to start a career in Information Technologies.
+Hi, how are you? My name is Alexander Cabrales. I'm 27, learning about computer software, programming, networking, hardware, and internet systems to start a career in Information Technologies.
 
 I have a B.S. in Criminal Justice from CSUEB--Go Pioneers! I'm a student full time at Ohlone College currently studying to earn a honors A.A. in Natural Science with an Emphasis in Math and Technology, a honors A.A. in Liberal Artis with an Emphasis in Languages, and to get level-1 certified this Spring with the College Reading and Language Association (CRLA). I'm looking to earn a A.S. in Information Technologies as well from Ohlone. My ultimate goal in the future for my education is to earn a B.S. in Information Technology Management.
 
