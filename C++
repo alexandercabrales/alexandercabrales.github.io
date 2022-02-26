@@ -1,0 +1,14 @@
+#include  <iostream>
+using namespace std;
+int main() 
+{
+  string mystr;           //String variable
+  
+  cout << "What's your student id?";
+ 
+  cin >> mystr;            //scan your id into console
+ 
+  cout << "your student id = " << mystr << ".\n";  //prints student id
+ 
+  return 0;
+}
