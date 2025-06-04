@@ -1,55 +1,125 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="assets/stylesheets/main.css">
-	
+  <meta charset="UTF-8">
+  <title>My Personal Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/stylesheets/main.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 1em;
+      text-align: center;
+      font-size: 1.5em;
+    }
+
+    nav {
+      background-color: #444;
+    }
+
+    nav .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.5em;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+    }
+
+    nav ul li {
+      display: inline;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5em 0.75em;
+      display: inline-block;
+      transition: background-color 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: #666;
+      border-radius: 5px;
+    }
+
+    #showcase {
+      background-color: #eee;
+      padding: 2em;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 2em;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1em;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
-<title> My personal page</title>
-<header> My other websites
-</header>
-<nav id="navbar">
-<div class="container">
-  <ul>
-  <li><a class="active" href="index.html">Home</a>
-  <li><a href="resume.html">Resume</a></li>
-  <li><a href="recommendation.html">Recommendations</a></li>
-  <li><a href="strengths.html">Strengths</a></li>
-  <li><a href="weaknessness.html">Weaknesses</a></li>
-  <li><a href="hobbies.html">Hobbies</a></li>
-  <li><a href="computers.html">Alex's Technology and Projects</a></li>
-  <li><a href="goals.html">Personal and Career Goals</a></li>
-  <li><a href="personalwebsites.html">My Other Websites</a></li>
-  <li><a href="music.html">Music</a></li>
-  </ul>
-</div>
-</nav>
 
+  <header>My Other Websites</header>
 
-<section id="showcase">
-<div class="container">
-	<h1>Websites</h1>
-</div>
-</section>
+  <nav id="navbar">
+    <div class="container">
+      <ul>
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="recommendation.html">Recommendations</a></li>
+        <li><a href="strengths.html">Strengths</a></li>
+        <li><a href="weaknessness.html">Weaknesses</a></li>
+        <li><a href="hobbies.html">Hobbies</a></li>
+        <li><a href="computers.html">Alex's Technology and Projects</a></li>
+        <li><a href="goals.html">Personal and Career Goals</a></li>
+        <li><a href="personalwebsites.html">My Other Websites</a></li>
+        <li><a href="music.html">Music</a></li>
+      </ul>
+    </div>
+  </nav>
 
+  <section id="showcase">
+    <div class="container">
+      <h1>Websites</h1>
+    </div>
+  </section>
 
-<div class="container">
-<section class="main">
-	<p>
-	<ul>
-		<li><a href="https://cabralescritique.com">Cabrales Critique</a>
-	</li>
-	</ul>
-	</p>
-</div>
-</section>
+  <div class="container">
+    <section class="main">
+      <ul>
+        <li><a href="https://cabralescritique.com">Cabrales Critique</a></li>
+      </ul>
+    </section>
+  </div>
 
-	
-	
-<footer id="main-footer">
-	<p>Alexander Cabrales Copyright© 2025
-	</p>
-</footer>
+  <footer id="main-footer">
+    <p>Alexander Cabrales © 2025</p>
+  </footer>
+
 </body>
-
 </html>
