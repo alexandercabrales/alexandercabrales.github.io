@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>Strengths | My Personal Page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Strengths</title>
   <link rel="stylesheet" href="assets/stylesheets/main.css" />
   <style>
+    /* Basic Nav Styling */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -23,89 +24,85 @@
       background-color: #444;
     }
 
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    nav .container {
       max-width: 1200px;
-      margin: auto;
+      margin: 0 auto;
       padding: 0.5em;
     }
 
-    .nav-links {
+    nav ul {
       list-style: none;
+      padding: 0;
+      margin: 0;
       display: flex;
       flex-wrap: wrap;
       gap: 1em;
-      padding: 0;
-      margin: 0;
     }
 
-    .nav-links li a {
+    nav ul li {
+      display: inline;
+    }
+
+    nav ul li a {
       color: white;
       text-decoration: none;
       padding: 0.5em 0.75em;
+      display: inline-block;
       transition: background-color 0.3s;
     }
 
-    .nav-links li a:hover,
-    .nav-links li a.active {
+    nav ul li a:hover,
+    nav ul li a.active {
       background-color: #666;
       border-radius: 5px;
     }
 
-    .menu-toggle {
-      display: none;
-      font-size: 1.5em;
-      color: white;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #333;
-      }
-
-      .nav-links.show {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-    }
-
     #showcase {
-      padding: 2em;
       background-color: #eee;
+      padding: 2em;
       text-align: center;
     }
 
     #main {
-      padding: 2em;
       max-width: 800px;
       margin: auto;
+      padding: 2em;
     }
 
-    #main-footer {
-      text-align: center;
+    footer {
       background-color: #333;
       color: white;
+      text-align: center;
       padding: 1em;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
-
 <body>
+
   <header>Strengths</header>
 
-  <!-- Nav bar placeholder -->
-  <div id="navbar-placeholder"></div>
+  <nav id="navbar">
+    <div class="container">
+      <ul>
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="recommendation.html">Recommendations</a></li>
+        <li><a href="strengths.html">Strengths</a></li>
+        <li><a href="weaknessness.html">Weaknesses</a></li>
+        <li><a href="hobbies.html">Hobbies</a></li>
+        <li><a href="computers.html">Alex's Technology and Projects</a></li>
+        <li><a href="goals.html">Personal and Career Goals</a></li>
+        <li><a href="personalwebsites.html">My Other Websites</a></li>
+        <li><a href="music.html">Music</a></li>
+      </ul>
+    </div>
+  </nav>
 
   <section id="showcase">
     <div class="container">
@@ -117,12 +114,12 @@
     <section id="main">
       <h1>Strengths</h1>
       <p>
-        I'm a people-oriented individual that enjoys social interaction,<br>
-        I follow directions well and complete tasks properly and efficiently,<br>
-        I have sound morals and a strong work ethic, making me reliable,<br>
-        I can communicate effectively and think critically to solve problems,<br>
-        I have a great smile,<br>
-        I maintain and promote a productive working environment.
+        I'm a people-oriented individual who enjoys social interaction.<br>
+        I follow directions well and complete tasks properly and efficiently.<br>
+        I have sound morals and a strong work ethic, making me a reliable person.<br>
+        I communicate well and think critically to solve problems.<br>
+        I have a great smile.<br>
+        I maintain and contribute to a productive working environment.
       </p>
     </section>
   </div>
@@ -131,25 +128,5 @@
     <p>Alexander Cabrales © 2025</p>
   </footer>
 
-  <script>
-    fetch('navbar.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('navbar-placeholder').innerHTML = data;
-
-        const toggleButton = document.getElementById('menu-toggle');
-        const navLinks = document.getElementById('nav-links');
-        toggleButton.addEventListener('click', () => {
-          navLinks.classList.toggle('show');
-        });
-
-        const links = document.querySelectorAll('.nav-links a');
-        links.forEach(link => {
-          if (link.href === window.location.href) {
-            link.classList.add('active');
-          }
-        });
-      });
-  </script>
 </body>
 </html>
