@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>Strengths | My Personal Page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Strengths</title>
   <link rel="stylesheet" href="assets/stylesheets/main.css" />
   <style>
-    /* --- Navigation Bar Styles --- */
+    /* Basic Nav Styling */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -24,100 +24,65 @@
       background-color: #444;
     }
 
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    nav .container {
       max-width: 1200px;
-      margin: auto;
+      margin: 0 auto;
       padding: 0.5em;
     }
 
-    .nav-links {
+    nav ul {
       list-style: none;
+      padding: 0;
+      margin: 0;
       display: flex;
       flex-wrap: wrap;
       gap: 1em;
-      padding: 0;
-      margin: 0;
     }
 
-    .nav-links li a {
+    nav ul li {
+      display: inline;
+    }
+
+    nav ul li a {
       color: white;
       text-decoration: none;
       padding: 0.5em 0.75em;
+      display: inline-block;
       transition: background-color 0.3s;
     }
 
-    .nav-links li a:hover,
-    .nav-links li a.active {
+    nav ul li a:hover,
+    nav ul li a.active {
       background-color: #666;
       border-radius: 5px;
     }
 
-    .menu-toggle {
-      display: none;
-      font-size: 1.5em;
-      color: white;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #333;
-      }
-
-      .nav-links.show {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-    }
-
-    /* --- Content Styling --- */
     #showcase {
-      padding: 2em;
       background-color: #eee;
+      padding: 2em;
       text-align: center;
     }
 
     #main {
+      max-width: 800px;
+      margin: auto;
       padding: 2em;
-      text-align: center;
     }
 
-    #main-footer {
-      text-align: center;
+    footer {
       background-color: #333;
       color: white;
+      text-align: center;
       padding: 1em;
     }
 
-    a.download-link {
-      font-size: 1.2em;
-      display: inline-block;
-      margin-top: 1em;
-      background-color: #444;
-      color: white;
-      padding: 0.75em 1.5em;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background 0.3s;
-    }
-
-    a.download-link:hover {
-      background-color: #666;
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
-
 <body>
 
   <header>Strengths</header>
