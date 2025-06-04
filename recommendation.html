@@ -65,4 +65,121 @@
 
     @media (max-width: 768px) {
       .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+      }
 
+      .nav-links.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    #showcase {
+      padding: 2em;
+      background-color: #eee;
+      text-align: center;
+    }
+
+    #main {
+      padding: 2em;
+    }
+
+    #main-footer {
+      text-align: center;
+      background-color: #333;
+      color: white;
+      padding: 1em;
+    }
+
+    ul.recommendation-list {
+      list-style: none;
+      padding: 0;
+      margin: 1em 0;
+    }
+
+    ul.recommendation-list li {
+      margin: 1em 0;
+    }
+
+    ul.recommendation-list a {
+      font-size: 1.1em;
+      color: #0044cc;
+      text-decoration: none;
+      background-color: #f2f2f2;
+      padding: 0.5em 1em;
+      border-radius: 5px;
+      display: inline-block;
+    }
+
+    ul.recommendation-list a:hover {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>Recommendations</header>
+
+  <nav id="navbar">
+    <div class="nav-container">
+      <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a class="active" href="recommendation.html">Recommendations</a></li>
+        <li><a href="strengths.html">Strengths</a></li>
+        <li><a href="weaknessness.html">Weaknesses</a></li>
+        <li><a href="hobbies.html">Hobbies</a></li>
+        <li><a href="computers.html">Alex's Technology and Projects</a></li>
+        <li><a href="goals.html">Personal and Career Goals</a></li>
+        <li><a href="personalwebsites.html">My Other Websites</a></li>
+        <li><a href="music.html">Music</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="showcase">
+    <div class="container">
+      <h1>Recommendations</h1>
+    </div>
+  </section>
+
+  <div class="container">
+    <section id="main">
+      <ul class="recommendation-list">
+        <li><a href="assets/images/Alexletterofrecommendationv4.pdf" target="_blank">Recommendation from Elliott Cragen</a></li>
+        <li><a href="assets/images/letterofrecommendation_2018_alexcv3.pdf" target="_blank">Recommendation from Sharon Radcliff</a></li>
+        <li><a href="assets/images/recommendation_mary_f_ohlone_alex_cabralesv2.PDF" target="_blank">Recommendation from Mary Fontanilla</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <footer id="main-footer">
+    <p>Alexander Cabrales © 2025</p>
+  </footer>
+
+  <script>
+    const toggleButton = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    toggleButton.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+
+    // Highlight current page
+    const links = document.querySelectorAll('.nav-links a');
+    links.forEach(link => {
+      if (link.href === window.location.href) {
+        link.classList.add('active');
+      }
+    });
+  </script>
+</body>
+</html>
