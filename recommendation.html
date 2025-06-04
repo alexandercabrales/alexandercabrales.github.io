@@ -1,52 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="assets/stylesheets/main.css">
-	
-	
-</head>
-<body>
-	<title> Recommendations</title>
-	<header> Recommendations
-	
-	</header>
-<nav id="navbar">
-<div class="container">
-<ul>
-  <li><a class="active" href="index.html">Home</a>
-  <li><a href="resume.html">Resume</a></li>
-  <li><a href="recommendation.html">Recommendations</a></li>
-  <li><a href="strengths.html">Strengths</a></li>
-  <li><a href="weaknessness.html">Weaknesses</a></li>
-  <li><a href="hobbies.html">Hobbies</a></li>
-  <li><a href="computers.html">Alex's Technology and Projects</a></li>
-  <li><a href="goals.html">Personal and Career Goals</a></li>
-  <li><a href="personalwebsites.html">My Other Websites</a></li>
-  <li><a href="music.html">Music</a></li>
-</ul>
-</div>
-</nav>
-<section id="showcase">
-<div class="container">
-	<h1>Recommendations</h1>
-</div>
-</section>
-<div class="container">
-<section id="main">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recommendations</title>
+  <link rel="stylesheet" href="assets/stylesheets/main.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
 
-<p>
-<ul>
-<li><a href="assets\images\Alexletterofrecommendationv4.pdf">Recommendation from Elliott Cragen</a></li>
-<li><a href="assets\images\letterofrecommendation_2018_alexcv3.pdf">Recommendation from Sharon Radcliff</a></li>
-<li><a href="assets\images\recommendation_mary_f_ohlone_alex_cabralesv2.PDF">Recommendation from Mary Fontanilla</a></li>
-</ul>
+    header {
+      background-color: #333;
+      color: white;
+      padding: 1em;
+      text-align: center;
+      font-size: 1.5em;
+    }
 
-</p>
-</section>
-</div>
-<footer id="main-footer"> 
-<p>Alexander Cabrales Copyright© 2025
-</p>
-</footer>
-</body>
-</html>
+    nav {
+      background-color: #444;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+      padding: 0.5em;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5em 0.75em;
+      transition: background-color 0.3s;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      background-color: #666;
+      border-radius: 5px;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5em;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+
