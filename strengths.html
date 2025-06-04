@@ -1,52 +1,155 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="assets/stylesheets/main.css">
-	
-	
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Strengths</title>
+  <link rel="stylesheet" href="assets/stylesheets/main.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 1em;
+      text-align: center;
+      font-size: 1.5em;
+    }
+
+    nav {
+      background-color: #444;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+      padding: 0.5em;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5em 0.75em;
+      transition: background-color 0.3s;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      background-color: #666;
+      border-radius: 5px;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5em;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    #showcase {
+      padding: 2em;
+      background-color: #eee;
+      text-align: center;
+    }
+
+    #main {
+      padding: 2em;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    #main-footer {
+      text-align: center;
+      background-color: #333;
+      color: white;
+      padding: 1em;
+    }
+  </style>
 </head>
+
 <body>
-	<title> My personal page</title>
-	<header> Strengths
-	</header>
-<nav id="navbar">
-<div class="container">
-<ul>
-  <li><a class="active" href="index.html">Home</a>
-  <li><a href="resume.html">Resume</a></li>
-  <li><a href="recommendation.html">Recommendations</a></li>
-  <li><a href="strengths.html">Strengths</a></li>
-  <li><a href="weaknessness.html">Weaknesses</a></li>
-  <li><a href="hobbies.html">Hobbies</a></li>
-  <li><a href="computers.html">Alex's Technology and Projects</a></li>
-  <li><a href="goals.html">Personal and Career Goals</a></li>
-  <li><a href="personalwebsites.html">My Other Websites</a></li>
-  <li><a href="music.html">Music</a></li>
-</ul>
-</div>
-</nav>
-	
-<section id="showcase">
-<div class="container">
-	<h1>Strengths</h1>
-</div>
-</section>
-<div class="container">
-<section id="main">
-	<h1>Strengths</h1>
-	
-	<p>I'm a people-oriented individual that enjoys social interaction, <br>
-	</br>I follow direction well and complete task properly and efficiently,<br>
-	</br>I have sound morals and a hard work ethic, making me a reliable person,<br>
-	</br>I can communicate well and think critically for any problems that arise,<br>
-	</br>I have a great smile, and<br>
-	</br>I maintain and provide a productive working environment.</p>
-</div>
-</section>
-	
-<footer id="main-footer"> 
-	<p>Alexander Cabrales Copyright© 2025
-	</p>
-</footer>
+  <header>Strengths</header>
+
+  <!-- Nav bar placeholder -->
+  <div id="navbar-placeholder"></div>
+
+  <section id="showcase">
+    <div class="container">
+      <h1>Strengths</h1>
+    </div>
+  </section>
+
+  <div class="container">
+    <section id="main">
+      <h1>Strengths</h1>
+      <p>
+        I'm a people-oriented individual that enjoys social interaction,<br>
+        I follow directions well and complete tasks properly and efficiently,<br>
+        I have sound morals and a strong work ethic, making me reliable,<br>
+        I can communicate effectively and think critically to solve problems,<br>
+        I have a great smile,<br>
+        I maintain and promote a productive working environment.
+      </p>
+    </section>
+  </div>
+
+  <footer id="main-footer">
+    <p>Alexander Cabrales © 2025</p>
+  </footer>
+
+  <script>
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+
+        const toggleButton = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        toggleButton.addEventListener('click', () => {
+          navLinks.classList.toggle('show');
+        });
+
+        const links = document.querySelectorAll('.nav-links a');
+        links.forEach(link => {
+          if (link.href === window.location.href) {
+            link.classList.add('active');
+          }
+        });
+      });
+  </script>
 </body>
 </html>
