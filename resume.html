@@ -1,48 +1,177 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="assets/stylesheets/main.css">
-	
-	
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume Page</title>
+  <link rel="stylesheet" href="assets/stylesheets/main.css" />
+  <style>
+    /* --- Navigation Bar Styles --- */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 1em;
+      text-align: center;
+      font-size: 1.5em;
+    }
+
+    nav {
+      background-color: #444;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+      padding: 0.5em;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5em 0.75em;
+      transition: background-color 0.3s;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      background-color: #666;
+      border-radius: 5px;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5em;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    /* --- Content Styling --- */
+    #showcase {
+      padding: 2em;
+      background-color: #eee;
+      text-align: center;
+    }
+
+    #main {
+      padding: 2em;
+      text-align: center;
+    }
+
+    #main-footer {
+      text-align: center;
+      background-color: #333;
+      color: white;
+      padding: 1em;
+    }
+
+    a.download-link {
+      font-size: 1.2em;
+      display: inline-block;
+      margin-top: 1em;
+      background-color: #444;
+      color: white;
+      padding: 0.75em 1.5em;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    a.download-link:hover {
+      background-color: #666;
+    }
+  </style>
 </head>
+
 <body>
-	<title> Resume_page</title>
-	<header> Resume
-	
-	</header>
-<nav id="navbar">
-<div class="container">
-<ul>
-  <li><a class="active" href="index.html">Home</a>
-  <li><a href="resume.html">Resume</a></li>
-  <li><a href="recommendation.html">Recommendations</a></li>
-  <li><a href="strengths.html">Strengths</a></li>
-  <li><a href="weaknessness.html">Weaknesses</a></li>
-  <li><a href="hobbies.html">Hobbies</a></li>
-  <li><a href="computers.html">Alex's Technology and Projects</a></li>
-  <li><a href="goals.html">Personal and Career Goals</a></li>
-  <li><a href="personalwebsites.html">My Other Websites</a></li>
-  <li><a href="music.html">Music</a></li>
-</ul>
-</div>
-</nav>
-<section id="showcase">
-<div class="container">
-	<h1>Resume</h1>
-</div>
-</section>
-<div class="container">
-<section id="main">
 
-<p>
-<li><a href="assets\images\resume_2020_new_alexander_cabrales_itv9.pdf">Resume</a></li>
+  <header>Resume</header>
 
-</p>
-</section>
-</div>
-<footer id="main-footer"> 
-<p>Alexander Cabrales Copyright© 2025
-</p>
-</footer>
+  <nav id="navbar">
+    <div class="nav-container">
+      <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="resume.html">Resume</a></li>
+        <li><a href="recommendation.html">Recommendations</a></li>
+        <li><a href="strengths.html">Strengths</a></li>
+        <li><a href="weaknessness.html">Weaknesses</a></li>
+        <li><a href="hobbies.html">Hobbies</a></li>
+        <li><a href="computers.html">Alex's Technology and Projects</a></li>
+        <li><a href="goals.html">Personal and Career Goals</a></li>
+        <li><a href="personalwebsites.html">My Other Websites</a></li>
+        <li><a href="music.html">Music</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="showcase">
+    <div class="container">
+      <h1>Resume</h1>
+    </div>
+  </section>
+
+  <div class="container">
+    <section id="main">
+      <p>You can download my resume here:</p>
+      <a class="download-link" href="assets/images/resume_2020_new_alexander_cabrales_itv9.pdf" target="_blank">Download Resume (PDF)</a>
+    </section>
+  </div>
+
+  <footer id="main-footer">
+    <p>Alexander Cabrales © 2025</p>
+  </footer>
+
+  <script>
+    const toggleButton = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    toggleButton.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+
+    // Highlight current page
+    const links = document.querySelectorAll('.nav-links a');
+    links.forEach(link => {
+      if (link.href === window.location.href) {
+        link.classList.add('active');
+      }
+    });
+  </script>
 </body>
 </html>
