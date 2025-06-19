@@ -144,6 +144,30 @@
       </ul>
     </div>
   </nav>
+  <style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  #main {
+    flex-grow: 1;
+    padding: 1em;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      overflow-y: auto;
+    }
+  }
+</style>
 
   <section id="showcase">
     <div class="container">
