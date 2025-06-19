@@ -12,10 +12,14 @@ p2 {
 	font-size: 12px;
 }
 
+/* ✅ Updated container for mobile padding and box sizing */
 .container {
 	width: 80%;
+	max-width: 1200px;
 	margin: auto;
 	overflow: hidden;
+	padding: 0 1em; /* Add padding to prevent edge overflow */
+	box-sizing: border-box;
 }
 
 #main-header {
@@ -58,28 +62,37 @@ p2 {
 }
 
 #showcase {
-  background-image: url('../images/showcase.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  min-height: 300px;
-  margin-bottom: 30px;
-  text-align: center;
-  position: relative; /* Ensures it stays in the normal document flow */
-  overflow: hidden;
+	background-image: url('../images/showcase.jpg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height: 300px;
+	margin-bottom: 30px;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+}
+
+#showcase h1 {
+	font-size: 2.5rem;
+	overflow-wrap: break-word; /* ✅ Handle long text */
+	word-wrap: break-word;
+	padding: 1em;
+	color: #fff; /* Optional: ensure text is visible over image */
 }
 
 @media (max-width: 600px) {
-  #showcase {
-    min-height: auto;
-    padding: 40px 10px;
-  }
+	#showcase {
+		min-height: auto;
+		padding: 40px 10px;
+	}
 
-  #showcase h1 {
-    font-size: 32px;
-    padding-top: 0;
-  }
+	#showcase h1 {
+		font-size: 32px;
+		padding-top: 0;
+	}
 }
+
 #main {
 	float: left;
 	width: 70%;
@@ -105,6 +118,34 @@ p2 {
 	z-index: 99;
 }
 
+/* ✅ Style for recommendation links */
+ul.recommendation-list {
+	list-style: none;
+	padding: 0;
+	margin: 1em 0;
+}
+
+ul.recommendation-list li {
+	margin: 1em 0;
+}
+
+ul.recommendation-list a {
+	font-size: 1.1em;
+	color: #0044cc;
+	text-decoration: none;
+	background-color: #f2f2f2;
+	padding: 0.5em 1em;
+	border-radius: 5px;
+	display: inline-block;
+	max-width: 100%;              /* ✅ Prevent overflow */
+	overflow-wrap: break-word;    /* ✅ Allow text wrap */
+	box-sizing: border-box;
+}
+
+ul.recommendation-list a:hover {
+	background-color: #ddd;
+}
+
 @media (max-width: 600px) {
 	#main {
 		width: 100%;
@@ -119,5 +160,10 @@ p2 {
 
 	#navbar ul {
 		flex-direction: column;
+	}
+
+	/* ✅ Responsive font adjustments */
+	ul.recommendation-list a {
+		font-size: 1em;
 	}
 }
