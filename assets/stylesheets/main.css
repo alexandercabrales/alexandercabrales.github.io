@@ -73,12 +73,14 @@ p2 {
 	overflow: hidden;
 }
 
+/* ✅ Modified to stay on one line, responsive font */
 #showcase h1 {
-	font-size: 2.5rem;
-	overflow-wrap: break-word; /* ✅ Handle long text */
-	word-wrap: break-word;
+	font-size: 3vw;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 	padding: 1em;
-	color: #fff; /* Optional: ensure text is visible over image */
+	color: #fff;
 }
 
 @media (max-width: 600px) {
@@ -90,6 +92,13 @@ p2 {
 	#showcase h1 {
 		font-size: 32px;
 		padding-top: 0;
+	}
+}
+
+/* ✅ Ensure minimum font size on very small screens */
+@media (max-width: 400px) {
+	#showcase h1 {
+		font-size: 18px;
 	}
 }
 
