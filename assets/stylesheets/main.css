@@ -58,20 +58,28 @@ p2 {
 }
 
 #showcase {
-	background-image: url('../images/showcase.jpg');
-	background-position: center;
-	min-height: 300px;
-	margin-bottom: 30px;
-	text-align: center;
+  background-image: url('../images/showcase.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 300px;
+  margin-bottom: 30px;
+  text-align: center;
+  position: relative; /* Ensures it stays in the normal document flow */
+  overflow: hidden;
 }
 
-#showcase h1 {
-	color: #fff;
-	font-size: 50px;
-	line-height: 1.6em;
-	padding-top: 30px;
-}
+@media (max-width: 600px) {
+  #showcase {
+    min-height: auto;
+    padding: 40px 10px;
+  }
 
+  #showcase h1 {
+    font-size: 32px;
+    padding-top: 0;
+  }
+}
 #main {
 	float: left;
 	width: 70%;
