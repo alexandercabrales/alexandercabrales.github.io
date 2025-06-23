@@ -5,129 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Personal Page</title>
   <link rel="stylesheet" href="assets/stylesheets/main.css" />
-  <style>
-    /* --- Navigation Bar Styles --- */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    header {
-      background-color: #333;
-      color: white;
-      padding: 1em;
-      text-align: center;
-      font-size: 1.5em;
-    }
-
-    nav {
-      background-color: #444;
-    }
-
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: auto;
-      padding: 0.5em;
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1em;
-      padding: 0;
-      margin: 0;
-    }
-
-    .nav-links li a {
-      color: white;
-      text-decoration: none;
-      padding: 0.5em 0.75em;
-      transition: background-color 0.3s;
-    }
-
-    .nav-links li a:hover,
-    .nav-links li a.active {
-      background-color: #666;
-      border-radius: 5px;
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 1.5em;
-      color: white;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #333;
-      }
-
-      .nav-links.show {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-    }
-
-    /* --- Section Styling --- */
-    #showcase {
-      padding: 2em;
-      background-color: #eee;
-      text-align: center;
-    }
-
-    #main {
-      padding: 2em;
-      text-align: center;
-    }
-
-    #main-footer {
-      text-align: center;
-      background-color: #333;
-      color: white;
-      padding: 1em;
-    }
-
-    img {
-      margin-top: 1em;
-      border-radius: 8px;
-    }
-  </style>
 </head>
-
 <body>
 
-  <header>Welcome</header>
-
-  <nav id="navbar">
-    <div class="nav-container">
-      <button class="menu-toggle" id="menu-toggle">&#9776;</button>
-      <ul class="nav-links" id="nav-links">
-        <li><a class="active" href="index.html">Home</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="recommendation.html">Recommendations</a></li>
-        <li><a href="strengths.html">Strengths</a></li>
-        <li><a href="weaknessness.html">Weaknesses</a></li>
-        <li><a href="hobbies.html">Hobbies</a></li>
-        <li><a href="computers.html">Alex's Technology and Projects</a></li>
-        <li><a href="goals.html">Personal and Career Goals</a></li>
-        <li><a href="personalwebsites.html">My Other Websites</a></li>
-        <li><a href="music.html">Music</a></li>
-      </ul>
-    </div>
-  </nav>
+  <!-- ✅ Auto-load the navbar -->
+  <div data-include="navbar.html"></div>
 
   <section id="showcase">
     <div class="container">
@@ -135,61 +17,21 @@
     </div>
   </section>
 
-<style>
-  .container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-
-  #main {
-    flex-grow: 1;
-    padding: 1em;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  @media (max-width: 768px) {
-    .container {
-      overflow-y: auto;
-    }
-  }
-</style>
-
-<div class="container">
-  <section id="main">
-    <p>
-      My name is<br />
-      <img src="https://i.imgur.com/9HIFkNH.jpg" alt="Personal Logo" />
-    </p>
-  </section>
-  <aside id="sidebar"></aside>
-</div>
-
+  <div class="container">
+    <section id="main">
+      <p>My name is<br />
+        <img src="https://i.imgur.com/9HIFkNH.jpg" alt="Personal Logo" />
+      </p>
+    </section>
+    <aside id="sidebar"></aside>
+  </div>
 
   <footer id="main-footer">
     <p>Alexander Cabrales © 2025</p>
   </footer>
 
-  <script>
-    const toggleButton = document.getElementById('menu-toggle');
-    const navLinks = document.getElementById('nav-links');
+  <!-- ✅ Include the JavaScript include loader -->
+  <script src="js/include.js"></script>
 
-    toggleButton.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
-    });
-
-    // Optional: highlight the current nav link (if applicable)
-    const links = document.querySelectorAll('.nav-links a');
-    links.forEach(link => {
-      if (link.href === window.location.href) {
-        link.classList.add('active');
-      }
-    });
-  </script>
 </body>
 </html>
