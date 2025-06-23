@@ -5,6 +5,7 @@
   <title>My Personal Page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="assets/stylesheets/main.css">
+  <script defer src="js/include.js"></script> <!-- ✅ JavaScript for navbar include -->
   <style>
     body {
       margin: 0;
@@ -17,43 +18,6 @@
       padding: 1em;
       text-align: center;
       font-size: 1.5em;
-    }
-
-    nav {
-      background-color: #444;
-    }
-
-    nav .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0.5em;
-    }
-
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1em;
-    }
-
-    nav ul li {
-      display: inline;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      padding: 0.5em 0.75em;
-      display: inline-block;
-      transition: background-color 0.3s;
-    }
-
-    nav ul li a:hover,
-    nav ul li a.active {
-      background-color: #666;
-      border-radius: 5px;
     }
 
     #showcase {
@@ -74,34 +38,14 @@
       text-align: center;
       padding: 1em;
     }
-
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-      }
-    }
   </style>
 </head>
 <body>
 
   <header>My Other Websites</header>
 
-  <nav id="navbar">
-    <div class="container">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="recommendation.html">Recommendations</a></li>
-        <li><a href="strengths.html">Strengths</a></li>
-        <li><a href="weaknessness.html">Weaknesses</a></li>
-        <li><a href="hobbies.html">Hobbies</a></li>
-        <li><a href="computers.html">Alex's Technology and Projects</a></li>
-        <li><a href="goals.html">Personal and Career Goals</a></li>
-        <li><a class="active" href="personalwebsites.html">My Other Websites</a></li>
-        <li><a href="music.html">Music</a></li>
-      </ul>
-    </div>
-  </nav>
+  <!-- ✅ Replaces the hardcoded nav -->
+  <div data-include="navbar.html"></div>
 
   <section id="showcase">
     <div class="container">
