@@ -1,178 +1,204 @@
+/* ========== Global Styles ========== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-	background-color: #f4f4f4;
-	color: #555;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 16px;
-	line-height: 1.6em;
-	margin: 0;
+  background-color: #f4f4f4;
+  color: #555;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.6em;
 }
 
-p2 {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-}
-
-/* ✅ Updated container for mobile padding and box sizing */
+/* ========== Layout Containers ========== */
 .container {
-	width: 80%;
-	max-width: 1200px;
-	margin: auto;
-	overflow: hidden;
-	padding: 0 1em; /* Add padding to prevent edge overflow */
-	box-sizing: border-box;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 1em;
 }
 
-#main-header {
-	background-color: lightgray;
-	color: #fff;
+/* ========== Header ========== */
+header {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1em;
+  font-size: 1.75em;
+  letter-spacing: 1px;
 }
 
+/* ========== Navigation ========== */
 #navbar {
-	background-color: #333;
-	color: #fff;
+  background-color: #333;
+  color: white;
 }
 
-#navbar ul {
-	padding: 0;
-	list-style: none;
-	margin: 0;
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0.5em;
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75em 1em;
+  max-width: 1200px;
+  margin: auto;
 }
 
-#navbar li {
-	display: inline;
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
 }
 
-#navbar a {
-	color: #fff;
-	text-decoration: none;
-	font-size: 18px;
-	padding: 8px 12px;
-	display: inline-block;
-	transition: background-color 0.3s ease;
-	border-radius: 4px;
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+  padding: 0.5em 0.75em;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
-#navbar a:hover,
-#navbar a.active {
-	background-color: #666;
-	border-radius: 5px;
+.nav-links li a:hover,
+.nav-links li a.active {
+  background-color: #666;
 }
 
+/* ========== Mobile Nav Toggle ========== */
+.menu-toggle {
+  display: none;
+  font-size: 1.5em;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #333;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* ========== Showcase Section ========== */
 #showcase {
-	background-image: url('../images/showcase.jpg');
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	min-height: 300px;
-	margin-bottom: 30px;
-	text-align: center;
-	position: relative;
-	overflow: hidden;
+  background-image: url('../images/showcase.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  margin-bottom: 2em;
 }
 
-/* ✅ Modified to stay on one line, responsive font */
 #showcase h1 {
-	font-size: 3vw;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	padding: 1em;
-	color: #fff;
+  color: white;
+  font-size: 3vw;
+  padding: 1em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 @media (max-width: 600px) {
-	#showcase {
-		min-height: auto;
-		padding: 40px 10px;
-	}
-
-	#showcase h1 {
-		font-size: 32px;
-		padding-top: 0;
-	}
+  #showcase h1 {
+    font-size: 32px;
+  }
 }
 
-/* ✅ Ensure minimum font size on very small screens */
 @media (max-width: 400px) {
-	#showcase h1 {
-		font-size: 18px;
-	}
+  #showcase h1 {
+    font-size: 18px;
+  }
 }
 
+/* ========== Main & Sidebar ========== */
 #main {
-	float: left;
-	width: 70%;
-	padding: 0 30px;
-	box-sizing: border-box;
+  float: left;
+  width: 70%;
+  padding: 1em;
 }
 
 #sidebar {
-	float: right;
-	width: 30%;
-	background: #333;
-	color: #fff;
-	padding: 10px;
-	box-sizing: border-box;
+  float: right;
+  width: 30%;
+  background-color: #333;
+  color: white;
+  padding: 1em;
 }
 
+@media (max-width: 768px) {
+  #main, #sidebar {
+    width: 100%;
+    float: none;
+  }
+}
+
+/* ========== Images ========== */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin-top: 1em;
+}
+
+/* ========== Footer ========== */
 #main-footer {
-	background: #333;
-	color: #fff;
-	text-align: center;
-	padding: 20px;
-	margin-top: 40px;
-	z-index: 99;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1em;
+  margin-top: 2em;
 }
 
-/* ✅ Style for recommendation links */
+/* ========== Recommendation List ========== */
 ul.recommendation-list {
-	list-style: none;
-	padding: 0;
-	margin: 1em 0;
+  list-style: none;
+  padding: 0;
+  margin: 1em 0;
 }
 
 ul.recommendation-list li {
-	margin: 1em 0;
+  margin: 1em 0;
 }
 
 ul.recommendation-list a {
-	font-size: 1.1em;
-	color: #0044cc;
-	text-decoration: none;
-	background-color: #f2f2f2;
-	padding: 0.5em 1em;
-	border-radius: 5px;
-	display: inline-block;
-	max-width: 100%;              /* ✅ Prevent overflow */
-	overflow-wrap: break-word;    /* ✅ Allow text wrap */
-	box-sizing: border-box;
+  font-size: 1.1em;
+  color: #0044cc;
+  text-decoration: none;
+  background-color: #f2f2f2;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  display: inline-block;
+  max-width: 100%;
+  overflow-wrap: break-word;
 }
 
 ul.recommendation-list a:hover {
-	background-color: #ddd;
+  background-color: #ddd;
 }
 
 @media (max-width: 600px) {
-	#main {
-		width: 100%;
-		float: none;
-		z-index: 99;
-	}
-
-	#sidebar {
-		width: 100%;
-		float: none;
-	}
-
-	#navbar ul {
-		flex-direction: column;
-	}
-
-	/* ✅ Responsive font adjustments */
-	ul.recommendation-list a {
-		font-size: 1em;
-	}
+  ul.recommendation-list a {
+    font-size: 1em;
+  }
 }
