@@ -8,11 +8,18 @@
   <script defer src="js/include.js"></script> <!-- Dynamic navbar loader -->
   <script defer src="js/navbar.js"></script> <!-- Navbar toggle for mobile -->
   <style>
-    body {
+    html, body {
+      height: 100%;
       margin: 0;
       font-family: Arial, sans-serif;
-      color: #555;
       background-color: #f4f4f4;
+      color: #555;
+    }
+
+    .site-wrapper {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     header {
@@ -30,10 +37,11 @@
       margin-bottom: 1em;
     }
 
-    #main {
+    .main {
       max-width: 900px;
       margin: auto;
       padding: 1em 2em 2em;
+      flex: 1;
     }
 
     ul.recommendation-list {
@@ -68,7 +76,6 @@
       color: white;
       text-align: center;
       padding: 1em;
-      margin-top: 2em;
     }
 
     @media (max-width: 600px) {
@@ -79,31 +86,29 @@
   </style>
 </head>
 <body>
+  <div class="site-wrapper">
+    <header>Recommendations</header>
 
-  <header>Recommendations</header>
+    <!-- Dynamic navbar -->
+    <div data-include="navbar.html"></div>
 
-  <!-- Dynamic navbar -->
-  <div data-include="navbar.html"></div>
+    <section id="showcase">
+      <div class="container">
+        <h1>Recommendations</h1>
+      </div>
+    </section>
 
-  <section id="showcase">
-    <div class="container">
-      <h1>Recommendations</h1>
-    </div>
-  </section>
-
-  <div class="container">
-    <section class="main">
+    <div class="container main">
       <ul class="recommendation-list">
         <li><a href="assets/images/Alexletterofrecommendationv4.pdf" target="_blank" rel="noopener noreferrer">Recommendation from Elliott Cragen</a></li>
         <li><a href="assets/images/letterofrecommendation_2018_alexcv3.pdf" target="_blank" rel="noopener noreferrer">Recommendation from Sharon Radcliff</a></li>
         <li><a href="assets/images/recommendation_mary_f_ohlone_alex_cabralesv2.PDF" target="_blank" rel="noopener noreferrer">Recommendation from Mary Fontanilla</a></li>
       </ul>
-    </section>
+    </div>
+
+    <footer>
+      <p>Alexander Cabrales © 2025</p>
+    </footer>
   </div>
-
-  <footer>
-    <p>Alexander Cabrales © 2025</p>
-  </footer>
-
 </body>
 </html>
