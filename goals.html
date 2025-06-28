@@ -8,9 +8,18 @@
   <script defer src="js/include.js"></script> <!-- ✅ Dynamic include -->
   <script defer src="js/navbar.js"></script> <!-- ✅ Mobile menu support -->
   <style>
-    body {
+    html, body {
+      height: 100%;
       margin: 0;
       font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #555;
+    }
+
+    .site-wrapper {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     header {
@@ -19,18 +28,22 @@
       padding: 1em;
       text-align: center;
       font-size: 1.5em;
+      flex-shrink: 0;
     }
 
     #showcase {
       background-color: #eee;
       padding: 2em;
       text-align: center;
+      margin-bottom: 1em;
+      flex-shrink: 0;
     }
 
-    #main {
+    .container {
       max-width: 1000px;
       margin: auto;
       padding: 2em;
+      flex: 1 0 auto; /* grow and take available space */
     }
 
     ul {
@@ -44,7 +57,7 @@
       color: white;
       text-align: center;
       padding: 1em;
-      margin-top: 2em;
+      flex-shrink: 0;
     }
 
     h2 {
@@ -55,41 +68,46 @@
     h1 {
       color: #111;
     }
+
+    #sidebar {
+      /* Assuming if sidebar has styles in your CSS, keep them */
+    }
   </style>
 </head>
 <body>
+  <div class="site-wrapper">
 
-  <header>Alex's Personal Goals</header>
+    <header>Alex's Personal Goals</header>
 
-  <!-- ✅ Navbar dynamically included -->
-  <div data-include="navbar.html"></div>
+    <!-- ✅ Navbar dynamically included -->
+    <div data-include="navbar.html"></div>
 
-  <section id="showcase">
-    <div class="container">
-      <h1>My Personal and Professional Goals</h1>
-    </div>
-  </section>
-
-  <div class="container">
-    <section class="main">
-      <h1>Personal Goals</h1>
-      <ul>
-        <li>I'm working on losing some weight this year.</li>
-        <li>Weekly Gym</li>
-        <li>Better Dieting</li>
-      </ul>
-
-      <h1>Current Career Goal</h1>
-      <p>I want to build my work experience in law or LE.</p>
+    <section id="showcase">
+      <div class="container">
+        <h1>My Personal and Professional Goals</h1>
+      </div>
     </section>
 
-    <aside id="sidebar"></aside>
+    <div class="container">
+      <section class="main">
+        <h1>Personal Goals</h1>
+        <ul>
+          <li>I'm working on losing some weight this year.</li>
+          <li>Weekly Gym</li>
+          <li>Better Dieting</li>
+        </ul>
+
+        <h1>Current Career Goal</h1>
+        <p>I want to build my work experience in law or LE.</p>
+      </section>
+
+      <aside id="sidebar"></aside>
+    </div>
+
+    <footer>
+      <p>Alexander Cabrales © 2025</p>
+    </footer>
+
   </div>
-
-
-  <footer>
-    <p>Alexander Cabrales © 2025</p>
-  </footer>
-
 </body>
 </html>
