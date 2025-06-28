@@ -7,9 +7,16 @@
   <link rel="stylesheet" href="assets/stylesheets/main.css" />
 
   <style>
-    body {
+    html, body {
+      height: 100%;
       margin: 0;
       font-family: Arial, sans-serif;
+    }
+
+    .site-wrapper {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     header {
@@ -26,15 +33,16 @@
       text-align: center;
     }
 
-    #main {
+    .main {
+      flex: 1;
       padding: 2em;
       text-align: center;
     }
 
     #main-footer {
-      text-align: center;
       background-color: #333;
       color: white;
+      text-align: center;
       padding: 1em;
     }
 
@@ -57,32 +65,32 @@
 </head>
 
 <body>
+  <div class="site-wrapper">
+    <header>Resume</header>
 
-  <header>Resume</header>
+    <!-- ✅ Dynamic navbar inclusion -->
+    <div data-include="navbar.html"></div>
 
-  <!-- ✅ Dynamic navbar inclusion -->
-  <div data-include="navbar.html"></div>
-
-  <section id="showcase">
-    <div class="container">
-      <h1>Resume</h1>
-    </div>
-  </section>
-
-  <div class="container">
-    <section class="main">
-      <p>You can download my resume here:</p>
-      <a class="download-link" href="assets/images/resume_2020_new_alexander_cabrales_itv9.pdf" target="_blank">Download Resume (PDF)</a>
+    <section id="showcase">
+      <div class="container">
+        <h1>Resume</h1>
+      </div>
     </section>
-  </div>
 
-  <footer id="main-footer">
-    <p>Alexander Cabrales © 2025</p>
-  </footer>
+    <div class="container main">
+      <p>You can download my resume here:</p>
+      <a class="download-link" href="assets/images/resume_2020_new_alexander_cabrales_itv9.pdf" target="_blank">
+        Download Resume (PDF)
+      </a>
+    </div>
+
+    <footer id="main-footer">
+      <p>Alexander Cabrales © 2025</p>
+    </footer>
+  </div>
 
   <!-- ✅ JavaScript files: first include.js, then navbar.js -->
   <script src="js/include.js"></script>
   <script src="js/navbar.js"></script>
-
 </body>
 </html>
