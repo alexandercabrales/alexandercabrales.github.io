@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Personal Page</title>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="assets/stylesheets/main.css">
-  <script defer src="js/include.js"></script> <!-- ✅ JavaScript include -->
+  <title>Alex's Personal Goals</title>
+  <link rel="stylesheet" href="assets/stylesheets/main.css" />
+  <script defer src="js/include.js"></script> <!-- ✅ Dynamic include -->
+  <script defer src="js/navbar.js"></script> <!-- ✅ Mobile menu support -->
   <style>
     body {
       margin: 0;
@@ -27,9 +28,15 @@
     }
 
     #main {
-      max-width: 800px;
+      max-width: 1000px;
       margin: auto;
       padding: 2em;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-left: 2em;
+      line-height: 1.6;
     }
 
     footer {
@@ -37,39 +44,65 @@
       color: white;
       text-align: center;
       padding: 1em;
+      margin-top: 2em;
+    }
+
+    h2 {
+      margin-top: 1.5em;
+      color: #222;
+    }
+
+    h1 {
+      color: #111;
     }
   </style>
 </head>
 <body>
 
-  <header>Personal and Career Goals</header>
+  <header>Alex's Personal Goals</header>
 
-  <!-- ✅ Dynamic navbar include -->
+  <!-- ✅ Navbar dynamically included -->
   <div data-include="navbar.html"></div>
 
   <section id="showcase">
     <div class="container">
-      <h1>Personal and Career Goals</h1>
+      <h1>My Personal and Professional Goals</h1>
     </div>
   </section>
 
   <div class="container">
-    <section class="main">
-      <h1>Personal Goals</h1>
+    <section id="main">
+      <h2>Personal Growth</h2>
       <ul>
-        <li>I'm working on losing some weight this year.</li>
-        <li>Weekly Gym</li>
-        <li>Better Dieting</li>
+        <li>Improve physical health through consistent exercise and nutrition.</li>
+        <li>Develop better time management habits and daily routines.</li>
+        <li>Read more books—at least one per month on topics that inspire or educate.</li>
       </ul>
 
-      <h1>Current Career Goal</h1>
-      <li>I want to build my work experience in law or LE.</li>
-    </section>
+      <h2>Professional Development</h2>
+      <ul>
+        <li>Continue growing my skills in web development, music production, and hardware setup.</li>
+        <li>Complete certifications related to IT, cybersecurity, or audio production.</li>
+        <li>Build and publish more projects to add to my personal portfolio.</li>
+      </ul>
 
-    <aside id="sidebar"></aside>
+      <h2>Financial Goals</h2>
+      <ul>
+        <li>Create and follow a monthly budget.</li>
+        <li>Pay off existing debts and build a long-term savings plan.</li>
+        <li>Start investing in low-cost index funds and/or retirement accounts.</li>
+      </ul>
+
+      <h2>Creative Projects</h2>
+      <ul>
+        <li>Record and release music using FL Studio and Serato Sample.</li>
+        <li>Design and maintain a personal website with project showcases.</li>
+        <li>Create video content documenting tech projects and tutorials.</li>
+      </ul>
+    </section>
   </div>
 
-  <footer id="main-footer">
+  <footer>
     <p>Alexander Cabrales © 2025</p>
   </footer>
 
