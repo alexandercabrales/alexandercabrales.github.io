@@ -8,9 +8,18 @@
   <script defer src="js/include.js"></script> <!-- ✅ Dynamic include -->
   <script defer src="js/navbar.js"></script> <!-- ✅ Navbar toggle for mobile -->
   <style>
-    body {
+    html, body {
+      height: 100%;
       margin: 0;
       font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #555;
+    }
+
+    .site-wrapper {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     header {
@@ -27,24 +36,17 @@
       text-align: center;
     }
 
-    #main {
+    .container {
       max-width: 1000px;
       margin: auto;
       padding: 2em;
+      flex: 1 0 auto;
     }
 
     ul {
       list-style-type: disc;
       margin-left: 2em;
       line-height: 1.6;
-    }
-
-    footer {
-      background-color: #333;
-      color: white;
-      text-align: center;
-      padding: 1em;
-      margin-top: 2em;
     }
 
     h2 {
@@ -55,60 +57,70 @@
     h1 {
       color: #111;
     }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1em;
+      flex-shrink: 0;
+    }
   </style>
 </head>
 <body>
+  <div class="site-wrapper">
 
-  <header>Alex's Hobbies</header>
+    <header>Alex's Hobbies</header>
 
-  <!-- ✅ Dynamic navbar included -->
-  <div data-include="navbar.html"></div>
+    <!-- ✅ Dynamic navbar included -->
+    <div data-include="navbar.html"></div>
 
-  <section id="showcase">
-    <div class="container">
-      <h1>Things I Love to Do</h1>
-    </div>
-  </section>
-
-  <div class="container">
-    <section class="main">
-      <h2>Music Production</h2>
-      <ul>
-        <li>I use FL Studio to create beats and sample tracks.</li>
-        <li>I mainly use Serato Sample for sampling.</li>
-        <li>My main machine is a MPD26.</li>
-      </ul>
-       
-      <h2>Sports and E-Sports</h2>
-      <ul>
-        <li>I've always had a passion for sports at a young age, playing soccer, baseball, and tennis.</li>
-        <li> I ended up playing tennis in high school and also began to play the e-sport Counter Strike.</li>
-        <li>I play tennis and Counter Strike still and enjoy watching soccer, football and baseball on TV.</li>
-      </ul>
-
-      <h2>Technology</h2>
-      <ul>
-        <li>I do, from time to time, explore software and hardware for older machines/applications.</li>
-        <li>I like tinkering with coding, such as HTML, JavaScript, & CSS.</li>
-      </ul>
-
-      <h2>Reading & Writing</h2>
-      <ul>
-        <li>I love to read and write every day, and I write fiction and poems in my spare time.</li>
-        <li>Some of my favorite authors are John Steinbeck, Hunter S. Thompson, Edgar Allan Poe, and Kurt Vonnegut.</li>
-      </ul>
-
-      <h2>Gaming</h2>
-      <ul>
-        <li>I like casual gaming with friends and exploring new releases (if warranted).</li>
-        <li>I do like playing classic games through emulation setups and retro gaming, specifically the PS3.</li>
-      </ul>
+    <section id="showcase">
+      <div class="container">
+        <h1>Things I Love to Do</h1>
+      </div>
     </section>
+
+    <div class="container">
+      <section class="main">
+        <h2>Music Production</h2>
+        <ul>
+          <li>I use FL Studio to create beats and sample tracks.</li>
+          <li>I mainly use Serato Sample for sampling.</li>
+          <li>My main machine is a MPD26.</li>
+        </ul>
+
+        <h2>Sports and E-Sports</h2>
+        <ul>
+          <li>I've always had a passion for sports at a young age, playing soccer, baseball, and tennis.</li>
+          <li>I ended up playing tennis in high school and also began to play the e-sport Counter Strike.</li>
+          <li>I play tennis and Counter Strike still and enjoy watching soccer, football and baseball on TV.</li>
+        </ul>
+
+        <h2>Technology</h2>
+        <ul>
+          <li>I do, from time to time, explore software and hardware for older machines/applications.</li>
+          <li>I like tinkering with coding, such as HTML, JavaScript, & CSS.</li>
+        </ul>
+
+        <h2>Reading & Writing</h2>
+        <ul>
+          <li>I love to read and write every day, and I write fiction and poems in my spare time.</li>
+          <li>Some of my favorite authors are John Steinbeck, Hunter S. Thompson, Edgar Allan Poe, and Kurt Vonnegut.</li>
+        </ul>
+
+        <h2>Gaming</h2>
+        <ul>
+          <li>I like casual gaming with friends and exploring new releases (if warranted).</li>
+          <li>I do like playing classic games through emulation setups and retro gaming, specifically the PS3.</li>
+        </ul>
+      </section>
+    </div>
+
+    <footer>
+      <p>Alexander Cabrales © 2025</p>
+    </footer>
+
   </div>
-
-  <footer>
-    <p>Alexander Cabrales © 2025</p>
-  </footer>
-
 </body>
 </html>
