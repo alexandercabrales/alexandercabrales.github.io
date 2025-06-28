@@ -8,9 +8,18 @@
   <script defer src="js/include.js"></script> <!-- Dynamic navbar loader -->
   <script defer src="js/navbar.js"></script> <!-- Navbar toggle for mobile -->
   <style>
-    body {
+    html, body {
+      height: 100%;
       margin: 0;
       font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #555;
+    }
+
+    .site-wrapper {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     header {
@@ -25,12 +34,14 @@
       background-color: #eee;
       padding: 2em;
       text-align: center;
+      margin-bottom: 1em;
     }
 
-    #main {
+    .main {
       max-width: 900px;
       margin: auto;
       padding: 2em;
+      flex: 1;
     }
 
     ul.website-list {
@@ -55,35 +66,34 @@
       color: white;
       text-align: center;
       padding: 1em;
-      margin-top: 2em;
     }
   </style>
 </head>
 <body>
+  <div class="site-wrapper">
+    <header>My Other Websites</header>
 
-  <header>My Other Websites</header>
+    <!-- Dynamic navbar -->
+    <div data-include="navbar.html"></div>
 
-  <!-- Dynamic navbar -->
-  <div data-include="navbar.html"></div>
-
-  <section id="showcase">
-    <div class="container">
-      <h1>My Other Websites</h1>
-    </div>
-  </section>
-
-  <div class="container">
-    <section class="main">
-      <p>Here is my first website I ever made that I do not really maintain:</p>
-      <ul>
-        <li><a href="https://cabralescritique.com" target="_blank">https://cabralescritique.com</a></li>
-      </ul>
+    <section id="showcase">
+      <div class="container">
+        <h1>My Other Websites</h1>
+      </div>
     </section>
+
+    <div class="container main">
+      <section>
+        <p>Here is my first website I ever made that I do not really maintain:</p>
+        <ul class="website-list">
+          <li><a href="https://cabralescritique.com" target="_blank" rel="noopener noreferrer">https://cabralescritique.com</a></li>
+        </ul>
+      </section>
+    </div>
+
+    <footer>
+      <p>Alexander Cabrales © 2025</p>
+    </footer>
   </div>
-
-  <footer>
-    <p>Alexander Cabrales © 2025</p>
-  </footer>
-
 </body>
 </html>
