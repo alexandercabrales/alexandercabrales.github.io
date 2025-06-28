@@ -5,12 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alex's Technology and Projects</title>
   <link rel="stylesheet" href="assets/stylesheets/main.css" />
-  <script defer src="js/include.js"></script> <!-- ✅ Dynamic include -->
-  <script defer src="js/navbar.js"></script> <!-- ✅ Navbar toggle -->
+  <script defer src="js/include.js"></script>
+  <script defer src="js/navbar.js"></script>
   <style>
-    body {
+    html, body {
+      height: 100%;
       margin: 0;
       font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .site-wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
     }
 
     header {
@@ -27,7 +36,7 @@
       text-align: center;
     }
 
-    #main {
+    .container {
       max-width: 1000px;
       margin: auto;
       padding: 2em;
@@ -39,14 +48,6 @@
       line-height: 1.6;
     }
 
-    footer {
-      background-color: #333;
-      color: white;
-      text-align: center;
-      padding: 1em;
-      margin-top: 2em;
-    }
-
     a {
       color: #005bbb;
     }
@@ -55,86 +56,90 @@
       text-decoration: underline;
     }
 
-    h2 {
+    h1, h2 {
+      color: #111;
       margin-top: 1.5em;
-      color: #222;
     }
 
-    h1 {
-      margin-top: 1.5em;
-      color: #111;
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1em;
     }
   </style>
 </head>
 <body>
 
-  <header>Alex's Technology and Projects</header>
+  <div class="site-wrapper">
+    <header>Alex's Technology and Projects</header>
 
-  <!-- ✅ Navbar dynamically included -->
-  <div data-include="navbar.html"></div>
+    <!-- ✅ Dynamic navbar included -->
+    <div data-include="navbar.html"></div>
 
-  <section id="showcase">
-    <div class="container">
-      <h1>Alex's Technology and Projects</h1>
-    </div>
-  </section>
-
-  <div class="container">
-    <section class="main">
-      <h1>Alex's Computer, Keyboard, Monitor, and Mouse Specs</h1>
-      <p>Here's a list of computers, keyboards, and mice that I have and maintain in my possession:</p>
-
-      <h2>Computers</h2>
-      <ul>
-        <li>ASUS ROG GL551 Series GL551JW-DS71 15.6" Gaming Laptop</li>
-        <li>CUSTOM PC BUILD <a href="https://pcpartpicker.com/list/MKPfjn">(2025 upgrade)</a></li>
-        <li>Gateway DX4860-UB33P - Quadboot with multiple Windows OS versions</li>
-        <li>HP Envy 750-140 Desktop - Core i5, 8GB RAM, 1TB + 128GB SSD</li>
-        <li>HP Pavilion dv6 15.6" - Core i3, 4GB RAM</li>
-        <li>eMachines T1140 - Intel Celeron, Linux</li>
-        <li>iPad Mini 2</li>
-        <li>iPhone 5s</li>
-      </ul>
-
-      <h2>Keyboards</h2>
-      <ul>
-        <li>Logitech G710+ Mechanical Keyboard</li>
-        <li>Logitech K200</li>
-        <li>Ducky One 2 TKL RGB (Pure White)</li>
-        <li>Ducky One 2 Mini (White Edition)</li>
-        <li>IBUYPOWER GKB100</li>
-      </ul>
-
-      <h2>Monitors</h2>
-      <ul>
-        <li>LG 22M38D-B - 22", Full HD, 60Hz</li>
-        <li>ASUS VG248QE - 24", Full HD, 60Hz</li>
-        <li>Acer Nitro XV282K - 28", 144Hz</li>
-        <li>ELEMENT 19" - LED-LCD HDTV, 60Hz</li>
-      </ul>
-
-      <h2>Mice</h2>
-      <ul>
-        <li>Logitech G203</li>
-        <li>Razer DeathAdder 2013</li>
-        <li>IBUYPOWER GMS5001</li>
-      </ul>
-
-      <h1>Projects</h1>
-      <ul>
-        <li><a href="assets/images/firstproject_computer_website_alexC.pdf">First Computer Project</a></li>
-        <li><a href="assets/images/secondproject_alexander_cabraleS_website_2018_computer.PDF">Second Computer Project</a></li>
-        <li><a href="assets/images/projectthree_computers_website_alex_cabrales.PDF">Third Computer Project</a></li>
-        <li><a href="assets/images/projectfour_alexander_cabrales_computer.pdf">Fourth Computer Project</a></li>
-        <li><a href="assets/images/fifthproject_computers_alexcabrales.pdf">Fifth Computer Project</a></li>
-        <li><a href="assets/images/sixthdocument_alex_cabrales_computersv2.docx.pdf">Sixth Computer Project</a></li>
-        <li><a href="assets/images/seventhproject_alex_cabrales_computers.PDF">Seventh Computer Project</a></li>
-        <li><a href="assets/images/eighthproject_computers_alex_cabrales.PDF">Eighth Computer Project</a></li>
-      </ul>
+    <section id="showcase">
+      <div class="container">
+        <h1>Alex's Technology and Projects</h1>
+      </div>
     </section>
+
+    <div class="container">
+      <section class="main">
+        <h1>Alex's Computer, Keyboard, Monitor, and Mouse Specs</h1>
+        <p>Here's a list of computers, keyboards, and mice that I have and maintain in my possession:</p>
+
+        <h2>Computers</h2>
+        <ul>
+          <li>ASUS ROG GL551 Series GL551JW-DS71 15.6" Gaming Laptop</li>
+          <li>CUSTOM PC BUILD <a href="https://pcpartpicker.com/list/MKPfjn">(2025 upgrade)</a></li>
+          <li>Gateway DX4860-UB33P - Quadboot with multiple Windows OS versions</li>
+          <li>HP Envy 750-140 Desktop - Core i5, 8GB RAM, 1TB + 128GB SSD</li>
+          <li>HP Pavilion dv6 15.6" - Core i3, 4GB RAM</li>
+          <li>eMachines T1140 - Intel Celeron, Linux</li>
+          <li>iPad Mini 2</li>
+          <li>iPhone 5s</li>
+        </ul>
+
+        <h2>Keyboards</h2>
+        <ul>
+          <li>Logitech G710+ Mechanical Keyboard</li>
+          <li>Logitech K200</li>
+          <li>Ducky One 2 TKL RGB (Pure White)</li>
+          <li>Ducky One 2 Mini (White Edition)</li>
+          <li>IBUYPOWER GKB100</li>
+        </ul>
+
+        <h2>Monitors</h2>
+        <ul>
+          <li>LG 22M38D-B - 22", Full HD, 60Hz</li>
+          <li>ASUS VG248QE - 24", Full HD, 60Hz</li>
+          <li>Acer Nitro XV282K - 28", 144Hz</li>
+          <li>ELEMENT 19" - LED-LCD HDTV, 60Hz</li>
+        </ul>
+
+        <h2>Mice</h2>
+        <ul>
+          <li>Logitech G203</li>
+          <li>Razer DeathAdder 2013</li>
+          <li>IBUYPOWER GMS5001</li>
+        </ul>
+
+        <h1>Projects</h1>
+        <ul>
+          <li><a href="assets/images/firstproject_computer_website_alexC.pdf">First Computer Project</a></li>
+          <li><a href="assets/images/secondproject_alexander_cabraleS_website_2018_computer.PDF">Second Computer Project</a></li>
+          <li><a href="assets/images/projectthree_computers_website_alex_cabrales.PDF">Third Computer Project</a></li>
+          <li><a href="assets/images/projectfour_alexander_cabrales_computer.pdf">Fourth Computer Project</a></li>
+          <li><a href="assets/images/fifthproject_computers_alexcabrales.pdf">Fifth Computer Project</a></li>
+          <li><a href="assets/images/sixthdocument_alex_cabrales_computersv2.docx.pdf">Sixth Computer Project</a></li>
+          <li><a href="assets/images/seventhproject_alex_cabrales_computers.PDF">Seventh Computer Project</a></li>
+          <li><a href="assets/images/eighthproject_computers_alex_cabrales.PDF">Eighth Computer Project</a></li>
+        </ul>
+      </section>
+    </div>
   </div>
 
-  <footer>
+  <footer id="main-footer">
     <p>Alexander Cabrales © 2025</p>
   </footer>
 
