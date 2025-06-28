@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Personal Page</title>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="assets/stylesheets/main.css">
-  <script defer src="js/include.js"></script> <!-- ✅ JS include script -->
+  <title>Alex's Music</title>
+  <link rel="stylesheet" href="assets/stylesheets/main.css" />
+  <script defer src="js/include.js"></script> <!-- ✅ Dynamic include -->
+  <script defer src="js/navbar.js"></script> <!-- ✅ Navbar toggle for mobile -->
   <style>
     body {
       margin: 0;
@@ -26,10 +27,25 @@
       text-align: center;
     }
 
-    .container {
-      max-width: 800px;
+    #main {
+      max-width: 1000px;
       margin: auto;
       padding: 2em;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-left: 2em;
+      line-height: 1.6;
+    }
+
+    h2 {
+      margin-top: 1.5em;
+      color: #222;
+    }
+
+    h1 {
+      color: #111;
     }
 
     footer {
@@ -37,31 +53,60 @@
       color: white;
       text-align: center;
       padding: 1em;
+      margin-top: 2em;
     }
   </style>
 </head>
 <body>
 
-  <header>ACAB † RBS † GUAP$quad</header>
+  <header>Alex's Music</header>
 
   <!-- ✅ Dynamic navbar include -->
   <div data-include="navbar.html"></div>
 
   <section id="showcase">
     <div class="container">
-      <h1>Soundcloud</h1>
+      <h1>My Music and Creative Work</h1>
     </div>
   </section>
 
   <div class="container">
-    <section class="main">
+    <section id="main">
+      <h2>Tracks I've Worked On</h2>
       <ul>
-        <li><a href="https://soundcloud.com/user-824463751">Al Cabrawl</a></li>
+        <li><a href="https://soundcloud.com/yourusername/track1" target="_blank">Track 1 – Sample Based Hip-Hop Beat</a></li>
+        <li><a href="https://soundcloud.com/yourusername/track2" target="_blank">Track 2 – Lo-Fi Experiment</a></li>
+        <li><a href="https://soundcloud.com/yourusername/track3" target="_blank">Track 3 – Drum Practice Groove</a></li>
+      </ul>
+
+      <h2>Tools I Use</h2>
+      <ul>
+        <li>FL Studio (Producer Edition)</li>
+        <li>Serato Sample</li>
+        <li>AKAI MPD26 MIDI Controller</li>
+        <li>Focusrite Scarlett 2i2 Interface</li>
+        <li>Various VST Plugins (Waves, iZotope, etc.)</li>
+      </ul>
+
+      <h2>Genres I Explore</h2>
+      <ul>
+        <li>Hip-Hop & Boom Bap</li>
+        <li>Lo-Fi</li>
+        <li>Experimental & Ambient</li>
+        <li>Trap & West Coast</li>
+      </ul>
+
+      <h2>Future Projects</h2>
+      <ul>
+        <li>Sample Pack Release</li>
+        <li>Beat Tape Series (Volumes 1–3)</li>
+        <li>Collaboration EPs</li>
+        <li>YouTube beat making & tutorial videos</li>
       </ul>
     </section>
   </div>
 
-  <footer id="main-footer">
+  <footer>
     <p>Alexander Cabrales © 2025</p>
   </footer>
 
