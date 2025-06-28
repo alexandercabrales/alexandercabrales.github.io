@@ -2,14 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Recommendations</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recommendations | Alex Cabrales</title>
   <link rel="stylesheet" href="assets/stylesheets/main.css" />
-  <script defer src="js/include.js"></script> <!-- ✅ Dynamic navbar JS -->
+  <script defer src="js/include.js"></script> <!-- Dynamic navbar loader -->
+  <script defer src="js/navbar.js"></script> <!-- Navbar toggle for mobile -->
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
+      color: #555;
+      background-color: #f4f4f4;
     }
 
     header {
@@ -21,26 +24,22 @@
     }
 
     #showcase {
-      padding: 2em;
       background-color: #eee;
+      padding: 2em;
       text-align: center;
+      margin-bottom: 1em;
     }
 
     #main {
-      padding: 2em;
-    }
-
-    #main-footer {
-      text-align: center;
-      background-color: #333;
-      color: white;
-      padding: 1em;
+      max-width: 900px;
+      margin: auto;
+      padding: 1em 2em 2em;
     }
 
     ul.recommendation-list {
       list-style: none;
       padding: 0;
-      margin: 1em 0;
+      margin: 0;
     }
 
     ul.recommendation-list li {
@@ -55,19 +54,35 @@
       padding: 0.5em 1em;
       border-radius: 5px;
       display: inline-block;
+      max-width: 100%;
+      overflow-wrap: break-word;
+      transition: background-color 0.3s ease;
     }
 
     ul.recommendation-list a:hover {
       background-color: #ddd;
     }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1em;
+      margin-top: 2em;
+    }
+
+    @media (max-width: 600px) {
+      ul.recommendation-list a {
+        font-size: 1em;
+      }
+    }
   </style>
 </head>
-
 <body>
 
   <header>Recommendations</header>
 
-  <!-- ✅ Injects navbar.html here -->
+  <!-- Dynamic navbar -->
   <div data-include="navbar.html"></div>
 
   <section id="showcase">
@@ -77,16 +92,16 @@
   </section>
 
   <div class="container">
-    <section class="main">
+    <section id="main">
       <ul class="recommendation-list">
-        <li><a href="assets/images/Alexletterofrecommendationv4.pdf" target="_blank">Recommendation from Elliott Cragen</a></li>
-        <li><a href="assets/images/letterofrecommendation_2018_alexcv3.pdf" target="_blank">Recommendation from Sharon Radcliff</a></li>
-        <li><a href="assets/images/recommendation_mary_f_ohlone_alex_cabralesv2.PDF" target="_blank">Recommendation from Mary Fontanilla</a></li>
+        <li><a href="assets/images/Alexletterofrecommendationv4.pdf" target="_blank" rel="noopener noreferrer">Recommendation from Elliott Cragen</a></li>
+        <li><a href="assets/images/letterofrecommendation_2018_alexcv3.pdf" target="_blank" rel="noopener noreferrer">Recommendation from Sharon Radcliff</a></li>
+        <li><a href="assets/images/recommendation_mary_f_ohlone_alex_cabralesv2.PDF" target="_blank" rel="noopener noreferrer">Recommendation from Mary Fontanilla</a></li>
       </ul>
     </section>
   </div>
 
-  <footer id="main-footer">
+  <footer>
     <p>Alexander Cabrales © 2025</p>
   </footer>
 
