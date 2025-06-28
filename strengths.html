@@ -2,15 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Strengths | My Personal Page</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Strengths | Alex Cabrales</title>
   <link rel="stylesheet" href="assets/stylesheets/main.css" />
-  <script defer src="js/include.js"></script> <!-- ✅ JavaScript for navbar -->
-
+  <script defer src="js/include.js"></script> <!-- Dynamic navbar loader -->
+  <script defer src="js/navbar.js"></script> <!-- Navbar toggle for mobile -->
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
+      color: #555;
+      background-color: #f4f4f4;
     }
 
     header {
@@ -25,12 +27,14 @@
       background-color: #eee;
       padding: 2em;
       text-align: center;
+      margin-bottom: 1em;
     }
 
     #main {
       max-width: 800px;
       margin: auto;
-      padding: 2em;
+      padding: 1em 2em 2em;
+      line-height: 1.6;
     }
 
     footer {
@@ -38,6 +42,7 @@
       color: white;
       text-align: center;
       padding: 1em;
+      margin-top: 2em;
     }
   </style>
 </head>
@@ -45,7 +50,7 @@
 
   <header>Strengths</header>
 
-  <!-- ✅ Dynamic navbar inclusion -->
+  <!-- Dynamic navbar -->
   <div data-include="navbar.html"></div>
 
   <section id="showcase">
@@ -55,8 +60,7 @@
   </section>
 
   <div class="container">
-    <section class="main">
-      <h1>Strengths</h1>
+    <section id="main">
       <p>
         I'm a people-oriented individual who enjoys social interaction.<br>
         I follow directions well and complete tasks properly and efficiently.<br>
@@ -68,7 +72,7 @@
     </section>
   </div>
 
-  <footer id="main-footer">
+  <footer>
     <p>Alexander Cabrales © 2025</p>
   </footer>
 
