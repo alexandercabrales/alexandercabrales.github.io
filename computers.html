@@ -1,17 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Alex's Technology and Projects</title>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="assets/stylesheets/main.css">
-  <script defer src="js/include.js"></script> <!-- ✅ Load the navbar script -->
+  <title>Alex's Technology and Projects</title>
+  <link rel="stylesheet" href="assets/stylesheets/main.css" />
+  <script defer src="js/include.js"></script> <!-- ✅ Dynamic include -->
+  <script defer src="js/navbar.js"></script> <!-- ✅ Navbar toggle -->
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 1em;
+      text-align: center;
+      font-size: 1.5em;
+    }
+
+    #showcase {
+      background-color: #eee;
+      padding: 2em;
+      text-align: center;
+    }
+
+    #main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2em;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-left: 2em;
+      line-height: 1.6;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1em;
+      margin-top: 2em;
+    }
+
+    a {
+      color: #005bbb;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    h2 {
+      margin-top: 1.5em;
+      color: #222;
+    }
+
+    h1 {
+      margin-top: 1.5em;
+      color: #111;
+    }
+  </style>
 </head>
 <body>
 
   <header>Alex's Technology and Projects</header>
 
-  <!-- ✅ Dynamically loaded navbar -->
+  <!-- ✅ Navbar dynamically included -->
   <div data-include="navbar.html"></div>
 
   <section id="showcase">
@@ -21,7 +80,7 @@
   </section>
 
   <div class="container">
-    <section class="main">
+    <section id="main">
       <h1>Alex's Computer, Keyboard, Monitor, and Mouse Specs</h1>
       <p>Here's a list of computers, keyboards, and mice that I have and maintain in my possession:</p>
 
@@ -75,10 +134,9 @@
     </section>
   </div>
 
-  <footer id="main-footer">
+  <footer>
     <p>Alexander Cabrales © 2025</p>
   </footer>
 
 </body>
 </html>
-	
