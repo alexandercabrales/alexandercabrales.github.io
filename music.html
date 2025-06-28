@@ -5,15 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alex's Music</title>
   <link rel="stylesheet" href="assets/stylesheets/main.css" />
-  <script defer src="js/include.js"></script> <!-- ✅ Dynamic include -->
-  <script defer src="js/navbar.js"></script> <!-- ✅ Navbar toggle for mobile -->
+  <script defer src="js/include.js"></script>
+  <script defer src="js/navbar.js"></script>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .site-wrapper {
+      flex: 1;
+    }
+  </style>
 </head>
 <body> 
 
   <div class="site-wrapper">
     <header>ACAB † RBS † GUAP$quad</header>
 
-    <!-- ✅ Dynamic navbar include -->
     <div data-include="navbar.html"></div>
 
     <section id="showcase">
