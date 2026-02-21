@@ -150,6 +150,30 @@ header {
   background: #ff0000;
 }
 
+/* ========== Track Buttons ========== */
+.track-list {
+  margin-bottom: 1em;
+}
+
+.track-btn {
+  margin: 0.5em;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  background: #444;
+  color: white;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.track-btn:hover {
+  background: #666;
+}
+
+.track-btn.active-track {
+  background: #cc0000;
+}
+
 /* ========== Main & Sidebar ========== */
 #main {
   float: left;
