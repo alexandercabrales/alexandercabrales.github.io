@@ -124,6 +124,7 @@ header {
   font-size: 2em;
   margin-bottom: 1em;
   white-space: normal;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
 }
 
 /* ========== Music Visualizer ========== */
