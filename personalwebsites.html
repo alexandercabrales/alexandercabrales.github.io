@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>My Other Websites | Alex Cabrales</title>
   <link rel="stylesheet" href="assets/stylesheets/main.css" />
-  <script defer src="js/include.js"></script> <!-- Dynamic navbar loader -->
-  <script defer src="js/navbar.js"></script> <!-- Navbar toggle for mobile -->
+  <script defer src="js/include.js"></script>
+  <script defer src="js/navbar.js"></script>
   <style>
     html, body {
       height: 100%;
@@ -15,13 +15,11 @@
       background-color: #f4f4f4;
       color: #555;
     }
-
     .site-wrapper {
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
-
     header {
       background-color: #333;
       color: white;
@@ -29,38 +27,36 @@
       text-align: center;
       font-size: 1.5em;
     }
-
     #showcase {
       background-color: #eee;
       padding: 2em;
       text-align: center;
       margin-bottom: 1em;
     }
-
+    #showcase h1 {
+      color: white;
+      -webkit-text-stroke: 2px black;
+    }
     .main {
       max-width: 900px;
       margin: auto;
       padding: 2em;
       flex: 1;
     }
-
     ul.website-list {
       list-style-type: disc;
       margin-left: 2em;
       line-height: 1.6;
     }
-
     ul.website-list li a {
       color: #0044cc;
       text-decoration: none;
       transition: color 0.3s ease;
     }
-
     ul.website-list li a:hover {
       color: #222;
       text-decoration: underline;
     }
-
     footer {
       background-color: #333;
       color: white;
@@ -72,16 +68,12 @@
 <body>
   <div class="site-wrapper">
     <header>My Other Websites</header>
-
-    <!-- Dynamic navbar -->
     <div data-include="navbar.html"></div>
-
     <section id="showcase">
       <div class="container">
         <h1>My Other Websites</h1>
       </div>
     </section>
-
     <div class="container main">
       <section>
         <p>Here is my first website I ever made that I do not really maintain:</p>
@@ -90,7 +82,6 @@
         </ul>
       </section>
     </div>
-
     <footer>
       <p>Alexander Cabrales © 2026</p>
     </footer>
