@@ -28,7 +28,7 @@
       margin: 20px auto;
       max-width: 100%;
     }
-    #playBtn {
+    #prevBtn, #playBtn, #nextBtn {
       padding: 10px 20px;
       font-size: 16px;
       cursor: pointer;
@@ -51,7 +51,9 @@
           <button class="track-btn" data-src="music/track3.mp3">Screaming (Gallows Flip)</button>
           <button class="track-btn" data-src="music/track4.mp3">Melon Mood Booster</button>
         </div>
+        <button id="prevBtn">&#9664;</button>
         <button id="playBtn">Play</button>
+        <button id="nextBtn">&#9654;</button>
         <audio id="audio" src="music/track1.mp3"></audio>
         <canvas id="canvas"></canvas>
       </div>
@@ -73,18 +75,34 @@ document.addEventListener("DOMContentLoaded", function () {
   let analyser;
   let source;
   let dataArray;
-  // Track Switching
-  trackButtons.forEach(btn => {
+  let currentIndex = 0;
+
+  function loadTrack(index) {
+    trackButtons.forEach(b => b.classList.remove("active-track"));
+    trackButtons[index].classList.add("active-track");
+    audio.src = trackButtons[index].dataset.src;
+    audio.load();
+    if (!audio.paused) audio.play();
+  }
+
+  // Track Switching via buttons
+  trackButtons.forEach((btn, index) => {
     btn.addEventListener("click", () => {
-      trackButtons.forEach(b => b.classList.remove("active-track"));
-      btn.classList.add("active-track");
-      audio.src = btn.dataset.src;
-      audio.load();
-      if (!audio.paused) {
-        audio.play();
-      }
+      currentIndex = index;
+      loadTrack(currentIndex);
     });
   });
+
+  document.getElementById("prevBtn").addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + trackButtons.length) % trackButtons.length;
+    loadTrack(currentIndex);
+  });
+
+  document.getElementById("nextBtn").addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % trackButtons.length;
+    loadTrack(currentIndex);
+  });
+
   button.addEventListener("click", () => {
     if (!audioContext) {
       audioContext = new (window.AudioContext || window.webkitAudioContext)();
@@ -105,6 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
       button.textContent = "Play";
     }
   });
+
   function animate() {
     requestAnimationFrame(animate);
     analyser.getByteFrequencyData(dataArray);
