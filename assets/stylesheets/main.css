@@ -107,38 +107,47 @@ header {
 
 /* ========== Showcase Section ========== */
 #showcase {
-  background-image: url('../images/showcase.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  min-height: 300px;
+  background-image: none; /* Removed hero image for visualizer */
+  background-color: #111; /* Dark producer aesthetic */
+  min-height: auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  overflow: hidden;
+  padding: 3em 1em;
   margin-bottom: 2em;
 }
 
 #showcase h1 {
   color: white;
-  font-size: 3vw;
-  padding: 1em;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
+  font-size: 2em;
+  margin-bottom: 1em;
+  white-space: normal;
 }
 
-@media (max-width: 600px) {
-  #showcase h1 {
-    font-size: 32px;
-  }
+/* ========== Music Visualizer ========== */
+#canvas {
+  width: 100%;
+  max-width: 900px;
+  height: 300px;
+  display: block;
+  margin: 20px auto;
 }
 
-@media (max-width: 400px) {
-  #showcase h1 {
-    font-size: 18px;
-  }
+#playBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #cc0000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+#playBtn:hover {
+  background: #ff0000;
 }
 
 /* ========== Main & Sidebar ========== */
