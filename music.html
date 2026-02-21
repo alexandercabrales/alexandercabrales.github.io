@@ -161,6 +161,46 @@
       }
     }
 
+    /* Track Slider */
+    .track-control {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 0.8em;
+    }
+
+    #trackSlider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 300px;
+      max-width: 80vw;
+      height: 4px;
+      background: #444;
+      border-radius: 2px;
+      outline: none;
+      cursor: pointer;
+    }
+
+    #trackSlider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 14px;
+      height: 14px;
+      background: #b8a020;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    #trackSlider::-moz-range-thumb {
+      width: 14px;
+      height: 14px;
+      background: #b8a020;
+      border-radius: 50%;
+      cursor: pointer;
+      border: none;
+    }
+
     #nowPlaying {
       color: white;
       font-style: italic;
@@ -204,6 +244,10 @@
           <button id="nextBtn">&#9654;</button>
         </div>
 
+        <div class="track-control">
+          <input type="range" id="trackSlider" value="0" step="0.1" style="width:300px;max-width:80vw;" />
+        </div>
+
         <div class="volume-control">
           <label for="volumeSlider">Volume</label>
           <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1" />
@@ -236,9 +280,26 @@ document.addEventListener("DOMContentLoaded", function () {
   let dataArray;
   let currentIndex = 0;
 
+  const trackSlider = document.getElementById("trackSlider");
+
   // Volume control
   volumeSlider.addEventListener("input", (e) => {
     audio.volume = e.target.value;
+  });
+
+  // Track slider - update max when metadata loads
+  audio.addEventListener("loadedmetadata", () => {
+    trackSlider.max = audio.duration;
+  });
+
+  // Move slider as track plays
+  audio.addEventListener("timeupdate", () => {
+    trackSlider.value = audio.currentTime;
+  });
+
+  // Scrub when user moves slider
+  trackSlider.addEventListener("input", () => {
+    audio.currentTime = trackSlider.value;
   });
 
   function loadTrack(index) {
