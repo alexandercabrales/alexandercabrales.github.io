@@ -107,8 +107,10 @@ header {
 
 /* ========== Showcase Section ========== */
 #showcase {
-  background-image: none; /* Removed hero image for visualizer */
-  background-color: #111; /* Dark producer aesthetic */
+  background-image: url('assets/images/showcase.jpg');
+  background-size: cover;
+  background-position: center;
+  background-color: #111;
   min-height: auto;
   display: flex;
   flex-direction: column;
