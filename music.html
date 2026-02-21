@@ -7,33 +7,27 @@
   <link rel="stylesheet" href="assets/stylesheets/main.css" />
   <script defer src="js/include.js"></script>
   <script defer src="js/navbar.js"></script>
-
   <style>
     html, body {
       height: 100%;
       margin: 0;
     }
-
     body {
       display: flex;
       flex-direction: column;
     }
-
     .site-wrapper {
       flex: 1;
     }
-
     #showcase {
       text-align: center;
       padding: 40px 0;
     }
-
     #canvas {
       display: block;
       margin: 20px auto;
       max-width: 100%;
     }
-
     #playBtn {
       padding: 10px 20px;
       font-size: 16px;
@@ -44,87 +38,65 @@
     }
   </style>
 </head>
-
 <body>
-
   <div class="site-wrapper">
     <header>Music</header>
-
     <div data-include="navbar.html"></div>
-
     <section id="showcase">
       <div class="container">
         <h1>Al Cabrawl</h1>
-
         <div class="track-list">
-          <button class="track-btn" data-src="music/track1.mp3">Anchor Ringing</button>
+          <button class="track-btn active-track" data-src="music/track1.mp3">Anchor Ringing</button>
           <button class="track-btn" data-src="music/track2.mp3">Men I Trust - Serenade of Water (Al Cabrawl Remix)</button>
           <button class="track-btn" data-src="music/track3.mp3">Screaming (Gallows Flip)</button>
           <button class="track-btn" data-src="music/track4.mp3">Melon Mood Booster</button>
         </div>
-
         <button id="playBtn">Play</button>
-
-        <audio id="audio"></audio>
+        <audio id="audio" src="music/track1.mp3"></audio>
         <canvas id="canvas"></canvas>
       </div>
     </section>
   </div>
-
   <footer id="main-footer">
     <p>Alexander Cabrales © 2026</p>
   </footer>
-
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-
   const audio = document.getElementById("audio");
   const button = document.getElementById("playBtn");
   const canvas = document.getElementById("canvas");
   const ctx = canvas.getContext("2d");
   const trackButtons = document.querySelectorAll(".track-btn");
-
   canvas.width = window.innerWidth * 0.8;
   canvas.height = 300;
-
   let audioContext;
   let analyser;
   let source;
   let dataArray;
-
   // Track Switching
   trackButtons.forEach(btn => {
     btn.addEventListener("click", () => {
-
       trackButtons.forEach(b => b.classList.remove("active-track"));
       btn.classList.add("active-track");
-
       audio.src = btn.dataset.src;
       audio.load();
-
       if (!audio.paused) {
         audio.play();
       }
     });
   });
-
   button.addEventListener("click", () => {
-
     if (!audioContext) {
       audioContext = new (window.AudioContext || window.webkitAudioContext)();
       analyser = audioContext.createAnalyser();
       source = audioContext.createMediaElementSource(audio);
-
       source.connect(analyser);
       analyser.connect(audioContext.destination);
-
       analyser.fftSize = 256;
       const bufferLength = analyser.frequencyBinCount;
       dataArray = new Uint8Array(bufferLength);
-
       animate();
     }
-
     if (audio.paused) {
       audio.play();
       button.textContent = "Pause";
@@ -132,18 +104,13 @@ document.addEventListener("DOMContentLoaded", function () {
       audio.pause();
       button.textContent = "Play";
     }
-
   });
-
   function animate() {
     requestAnimationFrame(animate);
-
     analyser.getByteFrequencyData(dataArray);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
     const barWidth = (canvas.width / dataArray.length) * 2;
     let x = 0;
-
     for (let i = 0; i < dataArray.length; i++) {
       const barHeight = dataArray[i];
       ctx.fillStyle = `rgb(${barHeight + 100}, 50, 150)`;
@@ -151,9 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
       x += barWidth + 1;
     }
   }
-
 });
 </script>
-
 </body>
 </html>
