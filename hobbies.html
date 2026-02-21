@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alex's Hobbies</title>
   <link rel="stylesheet" href="assets/stylesheets/main.css" />
-  <script defer src="js/include.js"></script> <!-- ✅ Dynamic include -->
-  <script defer src="js/navbar.js"></script> <!-- ✅ Navbar toggle for mobile -->
+  <script defer src="js/include.js"></script>
+  <script defer src="js/navbar.js"></script>
   <style>
     html, body {
       height: 100%;
@@ -15,13 +15,11 @@
       background-color: #f4f4f4;
       color: #555;
     }
-
     .site-wrapper {
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
-
     header {
       background-color: #333;
       color: white;
@@ -29,35 +27,33 @@
       text-align: center;
       font-size: 1.5em;
     }
-
     #showcase {
       background-color: #eee;
       padding: 2em;
       text-align: center;
     }
-
+    #showcase h1 {
+      color: white;
+      -webkit-text-stroke: 2px black;
+    }
     .container {
       max-width: 1000px;
       margin: auto;
       padding: 2em;
       flex: 1 0 auto;
     }
-
     ul {
       list-style-type: disc;
       margin-left: 2em;
       line-height: 1.6;
     }
-
     h2 {
       margin-top: 1.5em;
       color: #222;
     }
-
     h1 {
       color: #111;
     }
-
     footer {
       background-color: #333;
       color: white;
@@ -69,18 +65,13 @@
 </head>
 <body>
   <div class="site-wrapper">
-
     <header>Alex's Hobbies</header>
-
-    <!-- ✅ Dynamic navbar included -->
     <div data-include="navbar.html"></div>
-
     <section id="showcase">
       <div class="container">
         <h1>Things I Love to Do</h1>
       </div>
     </section>
-
     <div class="container">
       <section class="main">
         <h2>Music Production</h2>
@@ -89,26 +80,22 @@
           <li>I mainly use Serato Sample for sampling.</li>
           <li>My main machine is a MPD26.</li>
         </ul>
-
         <h2>Sports and E-Sports</h2>
         <ul>
           <li>I've always had a passion for sports at a young age, playing soccer, baseball, and tennis.</li>
           <li>I ended up playing tennis in high school and also began to play the e-sport Counter Strike.</li>
           <li>I play tennis and Counter Strike still and enjoy watching soccer, football and baseball on TV.</li>
         </ul>
-
         <h2>Technology</h2>
         <ul>
           <li>I do, from time to time, explore software and hardware for older machines/applications.</li>
           <li>I like tinkering with coding, such as HTML, JavaScript, & CSS.</li>
         </ul>
-
         <h2>Reading & Writing</h2>
         <ul>
           <li>I love to read and write every day, and I write fiction and poems in my spare time.</li>
           <li>Some of my favorite authors are John Steinbeck, Hunter S. Thompson, Edgar Allan Poe, and Kurt Vonnegut.</li>
         </ul>
-
         <h2>Gaming</h2>
         <ul>
           <li>I like casual gaming with friends and exploring new releases (if warranted).</li>
@@ -116,11 +103,9 @@
         </ul>
       </section>
     </div>
-
     <footer>
       <p>Alexander Cabrales © 2026</p>
     </footer>
-
   </div>
 </body>
 </html>
