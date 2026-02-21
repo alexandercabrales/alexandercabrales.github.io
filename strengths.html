@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Strengths | Alex Cabrales</title>
   <link rel="stylesheet" href="assets/stylesheets/main.css" />
-  <script defer src="js/include.js"></script> <!-- Dynamic navbar loader -->
-  <script defer src="js/navbar.js"></script> <!-- Navbar toggle for mobile -->
+  <script defer src="js/include.js"></script>
+  <script defer src="js/navbar.js"></script>
   <style>
     html, body {
       height: 100%;
@@ -15,13 +15,11 @@
       background-color: #f4f4f4;
       color: #555;
     }
-
     .site-wrapper {
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
-
     header {
       background-color: #333;
       color: white;
@@ -29,14 +27,16 @@
       text-align: center;
       font-size: 1.5em;
     }
-
     #showcase {
       background-color: #eee;
       padding: 2em;
       text-align: center;
       margin-bottom: 1em;
     }
-
+    #showcase h1 {
+      color: white;
+      -webkit-text-stroke: 2px black;
+    }
     .main {
       max-width: 800px;
       margin: auto;
@@ -44,7 +44,6 @@
       line-height: 1.6;
       flex: 1;
     }
-
     footer {
       background-color: #333;
       color: white;
@@ -56,16 +55,12 @@
 <body>
   <div class="site-wrapper">
     <header>Strengths</header>
-
-    <!-- Dynamic navbar -->
     <div data-include="navbar.html"></div>
-
     <section id="showcase">
       <div class="container">
         <h1>Strengths</h1>
       </div>
     </section>
-
     <div class="container main">
       <p>
         I'm a people-oriented individual who enjoys social interaction.<br>
@@ -76,7 +71,6 @@
         I maintain and contribute to a productive working environment.
       </p>
     </div>
-
     <footer>
       <p>Alexander Cabrales © 2026</p>
     </footer>
