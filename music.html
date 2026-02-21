@@ -28,6 +28,72 @@
       margin: 20px auto;
       max-width: 100%;
     }
+
+    /* MPC Screen */
+    .mpc-screen {
+      display: inline-block;
+      background-color: #0a0a0a;
+      border: 3px solid #444;
+      border-radius: 6px;
+      padding: 12px 0;
+      margin-bottom: 1.2em;
+      width: 420px;
+      max-width: 90vw;
+      box-shadow: 0 0 12px rgba(0,0,0,0.8), inset 0 0 8px rgba(0,0,0,0.6);
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    .mpc-screen-header {
+      color: #888;
+      font-size: 0.7em;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      border-bottom: 1px solid #222;
+      padding-bottom: 6px;
+      margin-bottom: 6px;
+      padding-left: 16px;
+      text-align: left;
+    }
+
+    .track-btn {
+      display: block;
+      width: 100%;
+      background: none;
+      border: none;
+      border-bottom: 1px solid #1a1a1a;
+      color: #b8a020;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.88em;
+      text-align: left;
+      padding: 7px 16px;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease;
+      letter-spacing: 0.5px;
+    }
+
+    .track-btn:last-child {
+      border-bottom: none;
+    }
+
+    .track-btn:hover {
+      background-color: #1a1a0a;
+      color: #e8c830;
+    }
+
+    .track-btn.active-track {
+      background-color: #b8a020;
+      color: #000;
+      font-weight: bold;
+    }
+
+    /* Controls */
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-bottom: 0.8em;
+    }
+
     #prevBtn, #playBtn, #nextBtn {
       padding: 10px 20px;
       font-size: 16px;
@@ -35,11 +101,19 @@
       background: #cc0000;
       color: white;
       border: none;
+      border-radius: 4px;
+      transition: background 0.3s ease;
     }
+
+    #prevBtn:hover, #playBtn:hover, #nextBtn:hover {
+      background: #ff0000;
+    }
+
     #nowPlaying {
       color: white;
       font-style: italic;
-      margin-top: 1em;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
       font-size: 1em;
     }
   </style>
@@ -51,16 +125,23 @@
     <section id="showcase">
       <div class="container">
         <h1>Al Cabrawl</h1>
-        <div class="track-list">
-          <button class="track-btn active-track" data-src="music/track1.mp3">Anchor Ringing</button>
-          <button class="track-btn" data-src="music/track2.mp3">Men I Trust - Serenade of Water (Al Cabrawl Remix)</button>
-          <button class="track-btn" data-src="music/track3.mp3">Screaming (Gallows Flip)</button>
-          <button class="track-btn" data-src="music/track4.mp3">Melon Mood Booster</button>
+
+        <div class="mpc-screen">
+          <div class="mpc-screen-header">&#9654; Sequence / Song</div>
+          <button class="track-btn active-track" data-src="music/track1.mp3">01. Anchor Ringing</button>
+          <button class="track-btn" data-src="music/track2.mp3">02. Men I Trust - Serenade of Water (Al Cabrawl Remix)</button>
+          <button class="track-btn" data-src="music/track3.mp3">03. Screaming (Gallows Flip)</button>
+          <button class="track-btn" data-src="music/track4.mp3">04. Melon Mood Booster</button>
         </div>
-        <button id="prevBtn">&#9664;</button>
-        <button id="playBtn">Play</button>
-        <button id="nextBtn">&#9654;</button>
+
+        <div class="controls">
+          <button id="prevBtn">&#9664;</button>
+          <button id="playBtn">Play</button>
+          <button id="nextBtn">&#9654;</button>
+        </div>
+
         <p id="nowPlaying">Now Playing: Anchor Ringing</p>
+
         <audio id="audio" src="music/track1.mp3"></audio>
         <canvas id="canvas"></canvas>
       </div>
@@ -90,7 +171,9 @@ document.addEventListener("DOMContentLoaded", function () {
     trackButtons[index].classList.add("active-track");
     audio.src = trackButtons[index].dataset.src;
     audio.load();
-    nowPlaying.textContent = "Now Playing: " + trackButtons[index].textContent;
+    // Strip the track number prefix for the now playing display
+    const label = trackButtons[index].textContent.replace(/^\d+\.\s*/, "");
+    nowPlaying.textContent = "Now Playing: " + label;
 
     if (!audioContext) {
       audioContext = new (window.AudioContext || window.webkitAudioContext)();
