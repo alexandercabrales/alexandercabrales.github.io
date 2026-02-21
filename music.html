@@ -82,7 +82,21 @@ document.addEventListener("DOMContentLoaded", function () {
     trackButtons[index].classList.add("active-track");
     audio.src = trackButtons[index].dataset.src;
     audio.load();
-    if (!audio.paused) audio.play();
+
+    if (!audioContext) {
+      audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      analyser = audioContext.createAnalyser();
+      source = audioContext.createMediaElementSource(audio);
+      source.connect(analyser);
+      analyser.connect(audioContext.destination);
+      analyser.fftSize = 256;
+      const bufferLength = analyser.frequencyBinCount;
+      dataArray = new Uint8Array(bufferLength);
+      animate();
+    }
+
+    audio.play();
+    button.textContent = "Pause";
   }
 
   // Track Switching via buttons
