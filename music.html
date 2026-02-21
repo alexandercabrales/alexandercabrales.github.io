@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="assets/stylesheets/main.css" />
   <script defer src="js/include.js"></script>
   <script defer src="js/navbar.js"></script>
+
   <style>
     html, body {
       height: 100%;
@@ -21,9 +22,30 @@
     .site-wrapper {
       flex: 1;
     }
+
+    #showcase {
+      text-align: center;
+      padding: 40px 0;
+    }
+
+    #canvas {
+      display: block;
+      margin: 20px auto;
+      max-width: 100%;
+    }
+
+    #playBtn {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background: #cc0000;
+      color: white;
+      border: none;
+    }
   </style>
 </head>
-<body> 
+
+<body>
 
   <div class="site-wrapper">
     <header>Music</header>
@@ -32,22 +54,83 @@
 
     <section id="showcase">
       <div class="container">
-        <h1>Soundcloud</h1>
+        <h1>Music Visualizer</h1>
+
+        <button id="playBtn">Play</button>
+
+        <audio id="audio" src="music/track1.mp3"></audio>
+        <canvas id="canvas"></canvas>
       </div>
     </section>
-
-    <div class="container">
-      <section class="main">
-        <ul class="recommendation-list">
-          <li><a href="https://soundcloud.com/user-824463751" target="_blank">Al Cabrawl</a></li>
-        </ul>
-      </section>
-    </div>
   </div>
 
   <footer id="main-footer">
     <p>Alexander Cabrales © 2026</p>
   </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const audio = document.getElementById("audio");
+  const button = document.getElementById("playBtn");
+  const canvas = document.getElementById("canvas");
+  const ctx = canvas.getContext("2d");
+
+  canvas.width = window.innerWidth * 0.8;
+  canvas.height = 300;
+
+  let audioContext;
+  let analyser;
+  let source;
+  let dataArray;
+
+  button.addEventListener("click", () => {
+
+    if (!audioContext) {
+      audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      analyser = audioContext.createAnalyser();
+      source = audioContext.createMediaElementSource(audio);
+
+      source.connect(analyser);
+      analyser.connect(audioContext.destination);
+
+      analyser.fftSize = 256;
+      const bufferLength = analyser.frequencyBinCount;
+      dataArray = new Uint8Array(bufferLength);
+
+      animate();
+    }
+
+    if (audio.paused) {
+      audio.play();
+      button.textContent = "Pause";
+    } else {
+      audio.pause();
+      button.textContent = "Play";
+    }
+
+  });
+
+  function animate() {
+    requestAnimationFrame(animate);
+
+    analyser.getByteFrequencyData(dataArray);
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    const barWidth = (canvas.width / dataArray.length) * 2;
+    let x = 0;
+
+    for (let i = 0; i < dataArray.length; i++) {
+      const barHeight = dataArray[i];
+      ctx.fillStyle = `rgb(${barHeight + 100}, 50, 150)`;
+      ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
+      x += barWidth + 1;
+    }
+  }
+
+});
+</script>
 
 </body>
 </html>
