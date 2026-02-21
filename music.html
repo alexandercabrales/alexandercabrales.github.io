@@ -36,6 +36,12 @@
       color: white;
       border: none;
     }
+    #nowPlaying {
+      color: white;
+      font-style: italic;
+      margin-top: 1em;
+      font-size: 1em;
+    }
   </style>
 </head>
 <body>
@@ -54,6 +60,7 @@
         <button id="prevBtn">&#9664;</button>
         <button id="playBtn">Play</button>
         <button id="nextBtn">&#9654;</button>
+        <p id="nowPlaying">Now Playing: Anchor Ringing</p>
         <audio id="audio" src="music/track1.mp3"></audio>
         <canvas id="canvas"></canvas>
       </div>
@@ -69,6 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const canvas = document.getElementById("canvas");
   const ctx = canvas.getContext("2d");
   const trackButtons = document.querySelectorAll(".track-btn");
+  const nowPlaying = document.getElementById("nowPlaying");
   canvas.width = window.innerWidth * 0.8;
   canvas.height = 300;
   let audioContext;
@@ -82,6 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
     trackButtons[index].classList.add("active-track");
     audio.src = trackButtons[index].dataset.src;
     audio.load();
+    nowPlaying.textContent = "Now Playing: " + trackButtons[index].textContent;
 
     if (!audioContext) {
       audioContext = new (window.AudioContext || window.webkitAudioContext)();
