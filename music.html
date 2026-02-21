@@ -54,11 +54,17 @@
 
     <section id="showcase">
       <div class="container">
-        <h1>My Music</h1>
+        <h1>Al Cabrawl</h1>
+
+        <div class="track-list">
+          <button class="track-btn" data-src="music/track1.mp3">Anchor Ringing</button>
+          <button class="track-btn" data-src="music/track2.mp3">Men I Trust - Serenade of Water (Al Cabrawl Remix)</button>
+          <button class="track-btn" data-src="music/track3.mp3">Screaming (Gallows Flip)</button>
+        </div>
 
         <button id="playBtn">Play</button>
 
-        <audio id="audio" src="music/track1.mp3"></audio>
+        <audio id="audio"></audio>
         <canvas id="canvas"></canvas>
       </div>
     </section>
@@ -75,6 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const button = document.getElementById("playBtn");
   const canvas = document.getElementById("canvas");
   const ctx = canvas.getContext("2d");
+  const trackButtons = document.querySelectorAll(".track-btn");
 
   canvas.width = window.innerWidth * 0.8;
   canvas.height = 300;
@@ -83,6 +90,22 @@ document.addEventListener("DOMContentLoaded", function () {
   let analyser;
   let source;
   let dataArray;
+
+  // Track Switching
+  trackButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+
+      trackButtons.forEach(b => b.classList.remove("active-track"));
+      btn.classList.add("active-track");
+
+      audio.src = btn.dataset.src;
+      audio.load();
+
+      if (!audio.paused) {
+        audio.play();
+      }
+    });
+  });
 
   button.addEventListener("click", () => {
 
@@ -115,7 +138,6 @@ document.addEventListener("DOMContentLoaded", function () {
     requestAnimationFrame(animate);
 
     analyser.getByteFrequencyData(dataArray);
-
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     const barWidth = (canvas.width / dataArray.length) * 2;
